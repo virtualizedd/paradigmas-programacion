@@ -1,0 +1,447 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Definiendo el paradigma funcional | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../invariante/index.html" />
+    
+    
+    <link rel="prev" href="../intro/declarativa.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.2"
+        data-chapter-title="Definiendo el paradigma funcional"
+        data-filepath="intro/funcional.md"
+        data-basepath=".."
+        data-revision="Tue Mar 29 2016 15:46:00 GMT-0300 (CLT)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="intro/index.html">
+            
+                
+                    <a href="../intro/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Introducción
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="intro/declarativa.html">
+            
+                
+                    <a href="../intro/declarativa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        La programación declarativa
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="intro/funcional.html">
+            
+                
+                    <a href="../intro/funcional.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Definiendo el paradigma funcional
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="invariante/index.html">
+            
+                
+                    <a href="../invariante/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Recursión y prog. invariante
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="conceptos-b&#xE1;sicos-de-programaci&#xF3;n-y-bases-de-la-programaci&#xF3;n-funcional">Conceptos b&#xE1;sicos de programaci&#xF3;n y bases de la programaci&#xF3;n funcional</h2>
+<p>Cuando se programa es com&#xFA;n la necesidad de almacenar ciertos valores/resultados
+en la memoria para uso posterior (y as&#xED; no tener que volver a obtener/expresar
+estos valores o resultados). Al hacerlo, es com&#xFA;n tambi&#xE9;n asociar un identificador
+(una palabra v&#xE1;lida cualquiera) a ese valor que nos facilite recordar su significancia y su
+acceso a futuro.</p>
+<p>En un sentido m&#xE1;s abstracto, lo anterior se puede describir c&#xF3;mo la definici&#xF3;n
+de una relaci&#xF3;n entre un <em>identificador</em> y una <em>variable</em>, d&#xF3;nde por variable entendemos
+un s&#xED;mbolo que puede representar a un valor cualquiera (tal como se entiende en
+las matem&#xE1;ticas, no m&#xE1;s que un atajo a un valor). (<em>tambi&#xE9;n puede verse como
+la definici&#xF3;n de un par ordenado (identificador, variable)</em>). A cada una de 
+estas relaciones entre un identificador y una variable, se le llama un <em>entorno</em></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>:</mo><mo>{</mo><mi>I</mi><mi>d</mi><mo>&#x2192;</mo><mi>v</mi><mi>a</mi><mi>r</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">
+E: \{Id \rightarrow var\}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mrel">:</span><span class="mopen">{</span><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mord mathit">d</span><span class="mrel">&#x2192;</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mclose">}</span></span></span></span></span></p>
+<p><strong>Nota</strong>: no se debe confundir esta manera de entender el significado de <em>variable</em>
+con como se utiliza la palabra en muchos lenguajes de programaci&#xF3;n
+para referirse a un espacio f&#xED;sico (o una celda) de la memoria.</p>
+<p>En los programas tambi&#xE9;n es habitual la presencia de muchos identificadores refiri&#xE9;ndose
+cada uno a cosas distintas y viviendo cada uno en un espacio espec&#xED;fico del programa
+(lo que tambi&#xE9;n se conoce como su <em>alcance</em>, que puede ser, por ejemplo, el interior de
+una funci&#xF3;n determinada, de una clase determinada, o de cualquier otro bloque).
+Estos &#xAB;espacios d&#xF3;nde viven los identificadores&#xBB; tambi&#xE9;n se pueden abstraer matem&#xE1;ticamente.
+Cada alcance en particular  se puede describir c&#xF3;mo una funci&#xF3;n definiendo a un
+conjunto de pares ordenados (identificador, variable) espec&#xED;ficos. O en otras
+palabras, definiendo una correspondencia entre identificadores y variables. </p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>:</mo><mi>I</mi><mi>d</mi><mo>&#x2192;</mo><mi>v</mi><mi>a</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">
+A: Id \rightarrow var
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">A</span><span class="mrel">:</span><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mord mathit">d</span><span class="mrel">&#x2192;</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span></span></span></span></span></p>
+<p><strong>Nota</strong>: No es d&#xED;ficil visualizar como, a su vez, cada alcance espec&#xED;fico
+dentro del programa (con sus propias variables locales), forma parte de un entorno 
+m&#xE1;s grande que representa al programa en general. Y de igual modo que para
+cada uno de estos alcances internos, este alcance global se puede modelar o 
+representar como una funci&#xF3;n correspondiendo identificadores con variables.
+(d&#xF3;nde algunas de las variables representan a otros alcances!)</p>
+<p>En definitiva, estos conceptos de <em>identificador</em>, <em>variable</em>, <em>entorno</em> son
+muy recurrentes y piezas tan fundamentales de la programaci&#xF3;n, que se podr&#xED;a
+decir que est&#xE1;n presentes en todos los lenguajes modernos. Aunque en el caso de
+las variables, no siempre con el mismo comportamiento. Cuando declaramos una
+variable, si nos alineamos al modelo descrito m&#xE1;s arriba, lo que hacemos es
+definir un par ordenado (identificador, variable) adicional para un entorno
+en espec&#xED;fico. A esta altura (con la sola declaraci&#xF3;n), la variable no representa
+a ning&#xFA;n valor en particular. Para que lo haga, debemos realizar una acci&#xF3;n m&#xE1;s:
+una asignaci&#xF3;n. Dependiendo de cada lenguaje, la sintaxis podr&#xED;a ser diferente,
+pero lo que no cambia es que con la asignaci&#xF3;n vinculamos al fin un valor a la 
+variable(y por consiguiente, al identificador). Perfecto, pero &#xBF;D&#xF3;nde est&#xE1; el potencial 
+comportamiento distinto? te debes estar preguntando. &#xBF;No es la declaraci&#xF3;n y la 
+asignaci&#xF3;n lo mismo en todos lados? La verdad es que s&#xED;, los conceptos de
+declaraci&#xF3;n y asignaci&#xF3;n no var&#xED;an, sin embargo, en lo &#xFA;ltimo (la asignaci&#xF3;n)
+puede haber un mundo de diferencia. Esto, porque en su definici&#xF3;n no especifica
+si se puede realizar s&#xF3;lo una vez o m&#xFA;ltiples veces. Esto &#xFA;ltimo es m&#xE1;s bien una
+propiedad que especifica un paradigma. Es el paradigma el que define
+los l&#xED;mites de la asignaci&#xF3;n.</p>
+<h3 id="la-asignaci&#xF3;n-en-la-programaci&#xF3;n-funcional">La asignaci&#xF3;n en la programaci&#xF3;n funcional</h3>
+<p>En la programaci&#xF3;n funcional las asignaciones son <em>&#xFA;nicas</em>. Esto quiere decir
+que una vez que se asigna un valor a una variable, no es posible
+asignar uno nuevo posteriormente.</p>
+<pre><code>declare X = 100
+
+//una vez que la variable ya tiene asignado un valor
+//no es posible asignarle uno nuevo
+
+//error
+X = 500
+</code></pre><p>Dado que es una propiedad que regula el comportamiento de un constructo fundamental
+de la programaci&#xF3;n (variables), la &#xAB;asignaci&#xF3;n &#xFA;nica&#xBB; es una propiedad
+fundamental del paradigma funcional.</p>
+<p><strong>Nota</strong>: es m&#xE1;s preciso decir &#xAB;la variable no se puede asignar a un nuevo valor&#xBB; que
+decir &#xAB;se puede realizar una s&#xF3;la asignaci&#xF3;n&#xBB;. El motivo es que es posible
+realizar m&#xFA;ltiples asignaciones sobre la variable, siempre que sea el mismo valor.</p>
+<p><strong>Nota2</strong>: Aunque en la programaci&#xF3;n funcional las asignaci&#xF3;n son &#xFA;nicas, nada dice
+sobre volver a declarar un identificador con el mismo nombre. Por lo tanto, si 
+bien no se puede asignar un nuevo valor, se puede volver a declarar el mismo
+identificador y vincularlo esta vez con un nuevo valor. Es posible usar un mismo
+identificador en distintas partes de un programa, y que en cada parte se refiera
+a un valor distinto. (Siguiendo el modelo anterior, se define un <em>entorno</em> nuevo,
+o reescribe el anterior)</p>
+<p>Ahora, est&#xE1; bien, el paradigma funcional cuenta con esta limitaci&#xF3;n para la
+asignaci&#xF3;n simplemente por una cuesti&#xF3;n de definici&#xF3;n. Pero, &#xBF;Por qu&#xE9; limitarnos
+a una asignaci&#xF3;n &#xFA;nica? &#xBF;Qu&#xE9; sentido tiene incluir esta propiedad? &#xBF;Acaso no nos
+estamos simplemente dificultando las cosas?. En realidad, la inclusi&#xF3;n de esta
+propiedad no se debe a la aparente dificultad de no contar con
+asignaciones m&#xFA;ltiples, sino por las ventajas que existen al hacerlo. Estas ventajas
+son similares a las dadas por cualquier otra regla restrictiva como los sem&#xE1;foros: 
+reducir la probabilidad de que haya un accidente. En este caso reducir la
+ probabilidad de romper un programa que funciona correctamente. La asignaci&#xF3;n
+m&#xFA;ltiple, como se ver&#xE1;, es un concepto distinto (de esos conceptos que mencionamos
+definen a un paradigma). Por lo tanto, si cambiamos la asignaci&#xF3;n m&#xFA;ltiple por la &#xFA;nica
+en la definici&#xF3;n del paradigma funcional, pero mantenemos todo lo dem&#xE1;s, a&#xFA;n as&#xED;
+ya no tenemos paradigma funcional, sino otro completamente diferente.</p>
+<h3 id="funciones">Funciones</h3>
+<p>La capacidad de almacenar valores y no tener que escribirlos una y otra vez ya 
+es un gran avance en el camino de facilitarnos la programaci&#xF3;n, pero no s&#xF3;lo de
+valores est&#xE1;n compuestos los programas. Adem&#xE1;s de los valores, est&#xE1;n las operaciones,
+lo que hacemos con esos valores para obtener los resultados que buscamos. Y en
+el caso de las operaciones, tambi&#xE9;n es com&#xFA;n el uso de una misma operaci&#xF3;n en
+distintas partes del programa, aunque vinculando distintos valores a los 
+identificadores (por ejemplo la operaci&#xF3;n gen&#xE9;rica a + b, podr&#xED;a ser 1 + 2, 3 + 4, etc..).
+En definitiva, nos vendr&#xED;a bien un medio para agrupar un conjunto de operaciones
+o instrucciones en torno a un identificador com&#xFA;n, y as&#xED; no tener que escribir una
+y otra vez lo mismo aunque involucre a valores distintos. Ese medio justamente
+son las <em>funciones</em>. Para evitar repetir el c&#xF3;digo una y otra vez lo que podemos
+hacer es <strong>crear una funci&#xF3;n</strong>. Definiendo una funci&#xF3;n asociamos a un identificador
+una correspondencia entre un conjunto de valores de entrada (argumentos) y un 
+&#xFA;nico valor de salida (retorno). La correspondencia, en tanto, queda definida
+por la serie de operaciones/instrucciones incluidas en su cuerpo.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mi>d</mi><mo>:</mo><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>&#x2026;</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><mo>&#x2192;</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">
+Id: {x_1, x_2, \ldots, x_n} \rightarrow y
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mord mathit">d</span><span class="mrel">:</span><span class="mord displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="minner">&#x2026;</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">&#x2192;</span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mi>d</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>&#x2026;</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><mo>[</mo><mi>o</mi><mi>p</mi><mi>e</mi><mi>r</mi><mi>a</mi><mi>c</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi>e</mi><mi>s</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">
+Id(x_1, x_1, \ldots, x_n) = [operaciones]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mord mathit">d</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="minner">&#x2026;</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose">)</span><span class="mrel">=</span><span class="mopen">[</span><span class="mord mathit">o</span><span class="mord mathit">p</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">a</span><span class="mord mathit">c</span><span class="mord mathit">i</span><span class="mord mathit">o</span><span class="mord mathit">n</span><span class="mord mathit">e</span><span class="mord mathit">s</span><span class="mclose">]</span></span></span></span></span></p>
+<p><strong>Nota</strong>: Una funci&#xF3;n se puede considerar un tipo de valor, as&#xED; como los enteros,
+los flotantes, y los caracteres son un tipo de valor. Claramente, distinto a 
+los anteriores, pero que de igual modo se puede vincular a una variable. En otras
+palabras, lo que hicimos fue asociar una variable a un identificador al igual
+que antes, s&#xF3;lo que ahora el valor vinculado a la variable es una <em>funci&#xF3;n</em></p>
+<h3 id="los-conceptos-de-la-programaci&#xF3;n-funcional">Los conceptos de la programaci&#xF3;n funcional</h3>
+<p>No debiera sorprender que el concepto de funci&#xF3;n sea fundamental en la programaci&#xF3;n
+&#xAB;funcional&#xBB;. Es decir, por alg&#xFA;n motivo ha de llamarse as&#xED;. La programaci&#xF3;n funcional
+est&#xE1; basada en modelar las computaciones con el s&#xF3;lo uso de funciones. Aunque para
+que eso sea posible no basta con los conceptos mencionados hasta ahora, hace falta incluir
+algunos m&#xE1;s, espec&#xED;ficamente tres conceptos m&#xE1;s. De momento, tenemos un panorama
+de programaci&#xF3;n compuesto de variables(de asignaci&#xF3;n &#xFA;nica) que vinculamos a un
+identificador, de operaciones que podemos realizar 
+sobre los valores vinculados a esas variables, y de funciones (no m&#xE1;s que una serie
+de operaciones/instrucciones agrupadas como si se tratasen de un s&#xF3;lo valor). Con
+s&#xF3;lo estos tres conceptos podemos hacer bastante poco la verdad. Dejando de lado
+las estructuras de datos, y centr&#xE1;ndonos en la l&#xF3;gica de la programaci&#xF3;n, con el
+s&#xF3;lo uso de esos conceptos tendr&#xED;amos que limitarnos a programas que se ejecuten
+de manera secuencial, instrucci&#xF3;n por instrucci&#xF3;n, sin que podamos controlar el
+flujo de ejecuci&#xF3;n. Y este hecho es clave &#xAB;sin que podamos controlar el flujo
+de ejecuci&#xF3;n&#xBB;. Es decir, sin la capacidad de definir escenarios en los que nuestro
+programa se comporte de distinto modo seg&#xFA;n las circunstancias. Y la verdad, sin
+esa capacidad, nos limitamos demasiado. El control de flujo es una caracter&#xED;stica
+indispensable al momento de programar y, por lo tanto, todo paradigma debiera
+facilitarlo de alg&#xFA;n modo. Justamente ah&#xED; es donde entran los &#xFA;ltimos tres conceptos.
+Son los que nos brindan el potencial del control de flujo en el paradigma funcional.
+Estos conceptos son: la composici&#xF3;n de funciones, la recursividad y las condicionales.</p>
+<h4 id="composici&#xF3;n-de-funciones">Composici&#xF3;n de funciones</h4>
+<p>En el contexto de la programaci&#xF3;n, componer funciones significa 
+definir funciones que llamen a otras funciones desde su interior. (definir
+una funci&#xF3;n en t&#xE9;rminos de otra funci&#xF3;n).</p>
+<pre><code>fun Id(x1, x2, ..., xN)
+    Id2()
+    Id3()
+    ...
+end
+</code></pre><p>Esta caracter&#xED;stica es clave para construir sistemas grandes, ya que podemos
+ construirlos en <strong>capas</strong>, donde cada funci&#xF3;n de una capa llama a funciones
+de capas m&#xE1;s abajos, y cada capa est&#xE1; a cargo de un equipo de desarrollo
+diferente. En la pr&#xE1;ctica, los sistemas pueden tener cientos de miles
+de capas.</p>
+<h4 id="recursividad">Recursividad</h4>
+<p>Una recursi&#xF3;n es una funci&#xF3;n que se llama a s&#xED; misma. Con esta capacidad podemos resolver problemas
+que requieran hacer uso de m&#xE1;s de una vez un mismo conjunto de operaciones.</p>
+<pre><code>fun Id(x1, x2, ..., xN)
+    [operaciones]
+    Id(x&apos;1, x&apos;2, ..., xN)
+end
+</code></pre><h4 id="condicionales">Condicionales</h4>
+<p>Cuando se aplica la recursividad se hace necesario contar con un medio para
+definir cuando detener las llamadas recursivas; de otro modo se realizar&#xED;an de
+forma &#xAB;infinita&#xBB;. Ese medio son las condicionales (por lo general una instrucci&#xF3;n
+if). Las condicionales nos permiten definir m&#xFA;ltiples v&#xED;as de ejecuci&#xF3;n posibles en 
+nuestros programas, y asociar a cada una de los caminos una condici&#xF3;n (de ah&#xED; el nombre)
+que se debe cumplir para que el programa tome ese camino u otro. Por lo tanto,
+podemos definir una condici&#xF3;n que controle si en una llamada a una funci&#xF3;n se
+realiza una llamada recursiva o no.</p>
+<pre><code>if condicion
+    [operaciones]
+else
+    [operaciones]
+end
+</code></pre><p><strong>Nota</strong>: Por supuesto, las condicionales no se tienen
+porque limitar a controlar las llamadas recursivas (y con ello, asegurar no se realicen
+de forma infinita), pero en conjunto con la recursividad definen una t&#xE9;cnica
+poderosa para resolver problemas complejos diviendolos en subproblemas m&#xE1;s peque&#xF1;os
+(t&#xE9;cnica de dividir y conquistar).</p>
+<p>Ejemplo de una soluci&#xF3;n usando dividir y conquistar, calcular la suma
+de los digitos de un n&#xFA;mero</p>
+<pre><code>fun sumDigitos: N =&gt;
+    if (N == 0) then return 0
+    else
+        return (N mod 10) + (sumDigitos (N div 10))
+    end
+end
+</code></pre><p><strong>Nota</strong>: div denota al operador para la divisi&#xF3;n entera.</p>
+<h3 id="resumen">Resumen</h3>
+<p>Ya podemos contar con un lenguaje que re&#xFA;ne todo lo que necesitamos para
+programar en estilo funcional. En adici&#xF3;n, podemos decir que es un lenguaje
+<em>Turing completo</em>, dado que puede computar las mismas cosas que una <em>m&#xE1;quina
+de Turing</em> (un modelo para representar te&#xF3;ricamente una computadora definido por Alan Turing en
+los a&#xF1;os 30). Y dado que una m&#xE1;quina de Turing es el modelo de computadora m&#xE1;s
+poderoso que sabemos como construir en la actualidad(en t&#xE9;rminos de lo que
+se puede programar), significa que con el lenguaje que hemos definidos con apenas
+seis conceptos podemos programar todo lo que sabemos calcular usando programas
+de computadora.</p>
+<p>En conclusi&#xF3;n, el lenguaje funcional que definimos es tan poderoso como una m&#xE1;quina de Turing
+y en lo que sigue, revisaremos como aprovechar en parte este potencial haciendo
+uso de la recursi&#xF3;n para aplicar las t&#xE9;cnicas de &#xAB;programaci&#xF3;n invariante&#xBB; y
+&#xAB;programaci&#xF3;n simb&#xF3;lica&#xBB;, y mucho m&#xE1;s adelante, las t&#xE9;cnicas de 
+&#xAB;programaci&#xF3;n de alto orden&#xBB;, de &#xAB;abstracci&#xF3;n de datos&#xBB; y &#xAB;de programaci&#xF3;n concurrente&#xBB;.</p>
+<pre><code>      identificadores
+    + variables asignaci&#xF3;n &#xFA;nica
+    + operaciones
+    + funciones
+    + composici&#xF3;n de funciones
+    + recursividad
+    + condicionales
+    ------------------------------
+      programaci&#xF3;n funcional
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../intro/declarativa.html" class="navigation navigation-prev " aria-label="Previous page: La programación declarativa"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../invariante/index.html" class="navigation navigation-next " aria-label="Next page: Recursión y prog. invariante"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"katex":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

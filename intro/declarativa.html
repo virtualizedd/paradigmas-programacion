@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>La programación declarativa | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../intro/funcional.html" />
+    
+    
+    <link rel="prev" href="../intro/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.1"
+        data-chapter-title="La programación declarativa"
+        data-filepath="intro/declarativa.md"
+        data-basepath=".."
+        data-revision="Tue Mar 29 2016 15:46:00 GMT-0300 (CLT)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="intro/index.html">
+            
+                
+                    <a href="../intro/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Introducción
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1" data-path="intro/declarativa.html">
+            
+                
+                    <a href="../intro/declarativa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        La programación declarativa
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="intro/funcional.html">
+            
+                
+                    <a href="../intro/funcional.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Definiendo el paradigma funcional
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="invariante/index.html">
+            
+                
+                    <a href="../invariante/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Recursión y prog. invariante
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="la-programaci&#xF3;n-declarativa">La programaci&#xF3;n declarativa</h1>
+<p>Comenzaremos el estudio de los paradigmas de programaci&#xF3;n con el 
+m&#xE1;s sencillo de todos: la programaci&#xF3;n funcional.</p>
+<p>Los motivos, mencionados en la introducci&#xF3;n se pueden resumir del siguiente
+modo:</p>
+<ul>
+<li>es el m&#xE1;s simple</li>
+<li>es la base para todos los dem&#xE1;s paradigmas</li>
+</ul>
+<p>Esto &#xFA;ltimo significa que todos los dem&#xE1;s paradigmas se pueden obtener a&#xF1;adiendo
+nuevos conceptos uno por uno a los ya incluidos en el paradigma funcional.</p>
+<p>Pero antes de entrar de lleno con el estilo funcional, hace falta aclarar
+primero un concepto mucho m&#xE1;s amplio que abarca al estilo funcional y a muchos
+de los otros paradigmas que revisaremos m&#xE1;s adelante: este es el cocepto de
+<em>programaci&#xF3;n declarativa</em>. El paradigma funcional es de hecho un <em>tipo</em> de
+programaci&#xF3;n declarativa. As&#xED; que resula conveniente comprender bien este concepto
+antes de revisar a la programaci&#xF3;n funcional en s&#xED;.</p>
+<h3 id="la-programaci&#xF3;n-declarativa">La programaci&#xF3;n declarativa</h3>
+<p>qu&#xE9; es la programaci&#xF3;n declarativa se puede considerar desde dos perspectivas:
+una a largo plazo y otra a corto plazo.</p>
+<p>A largo plazo:</p>
+<ul>
+<li>es una visi&#xF3;n hacia el futuro</li>
+<li>s&#xF3;lo decimos el resultado que queremos (dando las propiedades que debe tener
+  el resultado)</li>
+<li>dejamos que la computadora descifre por s&#xED; misma c&#xF3;mo alcanzar ese resultado</li>
+</ul>
+<p>Lo opuesto a declarativo se denomina &#xAB;imperativo&#xBB;. En este &#xFA;ltimo, las instrucciones
+dadas a la computadora son &#xAB;comandos&#xBB;, el c&#xF3;mo llegar al resultado que buscamos.
+En cambio, la programaci&#xF3;n declarativa s&#xF3;lo se limita e instruir a la computadora con
+las propiedades que debe tener el resultado que buscamos.</p>
+<p>&#xBF;C&#xF3;mo se vuelve realidad la visi&#xF3;n declarativa de la programaci&#xF3;n?</p>
+<p>La historia de la computaci&#xF3;n se podr&#xED;a resumir en una serie de dise&#xF1;os progresivos
+de lenguajes de programaci&#xF3;n, compiladores, sistemas, herramientas, etc.. que 
+tienen por objetivo hacer m&#xE1;s y m&#xE1;s f&#xE1;cil la vida del desarrollador. En otras palabras,
+en ir volviendo poco a poco m&#xE1;s real la capacidad de hacer mucho m&#xE1;s con el mismo
+esfuerzo de programaci&#xF3;n. Podr&#xED;a considerarse, por lo tanto, toda la historia de
+la computaci&#xF3;n como un progreso hacia lo m&#xE1;s declarativo. (Pues se facilita
+el desarrollo si el programador se concentra m&#xE1;s en el problema, en sus propiedades,
+que en dise&#xF1;ar los &#xAB;comandos&#xBB; para obtener su soluci&#xF3;n)
+Y por supuesto, tambi&#xE9;n hacia lo m&#xE1;s r&#xE1;pido y lo m&#xE1;s barato - las tres cosas
+est&#xE1;n conectadas. El hecho de que obtengamos m&#xE1;s r&#xE1;pidez a menor precio nos
+permite volver las cosas m&#xE1;s declarativas. Y hoy en d&#xED;a, esto se ha vuelto
+muy sofisticado. Por ejemplo, hay una t&#xE9;cnica llamada aprendizaje autom&#xE1;tico en
+la que tenemos un algoritmo que aprende c&#xF3;mo hacer algo. En lugar de decir a la
+computador c&#xF3;mo hacer algo, podemos decirle que aprenda a hacerlo. Esta es otra
+forma de programar muy declarativa.</p>
+<p>A corto plazo:</p>
+<ul>
+<li>el uso de matem&#xE1;ticas en la programaci&#xF3;n (aplicando conceptos como 
+  <strong>funciones</strong> y <strong>relaciones</strong>). De este modo una computaci&#xF3;n se puede
+  modelar y calcular, por ejemplo, como si se tratara de una funci&#xF3;n o una
+   relaci&#xF3;n, y desde all&#xED;, simplificar la programaci&#xF3;n con el poder de las
+   matem&#xE1;ticas. (Con cosas como la confluencia y la transparencia referencial)</li>
+</ul>
+<p>La programaci&#xF3;n declarativa es muy com&#xFA;n en la pr&#xE1;ctica. Hay muchos lenguajes que
+implementan derivados de este tipo de programaci&#xF3;n, como lo es la programaci&#xF3;n
+funcional. Para este &#xFA;ltimo, por ejemplo, est&#xE1;n LISP, Scheme, ML, Haskell, y
+OCaml, entre algunos. Tambi&#xE9;n hay lenguajes muy comunes que siguen un paradigma
+derivado conocido como programaci&#xF3;n l&#xF3;gica. En estos se encuentran: SQL y Prolog. Y
+tambi&#xE9;n algunos que siguen una suerte de combinaci&#xF3;n entre los estilos anteriormente
+mencionados, entre los que est&#xE1;n lenguajes como XSL y XSLT para formatear y 
+transformar documentos, respectivamente.</p>
+<p>A este tipo de programaci&#xF3;n que hace uso de las matem&#xE1;ticas para modelar y estudiar
+sus computaciones, tambi&#xE9;n se le llama &#xAB;programaci&#xF3;n sin estados&#xBB;, donde estado
+se refiere a la capacidad de actualizar las estructuras de datos (asignarles destructivamente
+nuevos valores) que forman parte del programa. En el enfoque declarativo no se
+actualizan/modifican las estructuras, sino que una vez definidas/creadas se mantienen
+sin cambiar a lo largo del programa. Esto implica que la verificaci&#xF3;n y testing
+que se realice posteriormente al programa sea mucho m&#xE1;s simple. En esta forma de
+ver las cosas, se puede diferenciar lo declarativo de lo imperativo, en que lo primera
+es una programaci&#xF3;n &#xAB;sin estados&#xBB; y lo &#xFA;ltimo, una programacion &#xAB;con estados&#xBB;.</p>
+<h3 id="el-paradigma-funcional">El paradigma funcional</h3>
+<p>Comprendiendo qu&#xE9; es la programaci&#xF3;n declarativa, y que la programaci&#xF3;n funcional
+es un derivado de ella, podemos entender ciertas ventajas claves que rodean
+a la programaci&#xF3;n funcional.</p>
+<ul>
+<li><p>Las funciones no cambian. Esto significa que un programa que funcione hoy, deber&#xED;a
+funcionar ma&#xF1;ana. Una funci&#xF3;n s&#xF3;lo describe un problema, y las propiedades del problema,
+o cu&#xE1;l es el problema, no deber&#xED;a cambiar con el tiempo. Lo &#xFA;nico que cambia son
+los argumentos, pero no las funciones.</p>
+</li>
+<li><p>Esta &#xFA;ltima caracter&#xED;stica es tan poderosa, que por s&#xED; misma es suficiente para
+argumentar que todos los lenguajes deber&#xED;an animar a programar en este estilo. Por
+ejemplo, a programar cosas muy comunes hoy en d&#xED;a como &#xAB;servidores sin estado&#xBB; 
+para aplicaciones de cliente/servidor, o &#xAB;componentes sin estado&#xBB; para una aplicaci&#xF3;n de servicios.</p>
+</li>
+<li><p>Aprender programaci&#xF3;n funcional nos ayuda a pensar en este estilo.
+Concentrarse en las propiedades del problema. Y dado que es un derivado de la
+programaci&#xF3;n declarativa, es una excelente manera de empezar a pensar de
+forma declarativa.</p>
+</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../intro/index.html" class="navigation navigation-prev " aria-label="Previous page: Introducción"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../intro/funcional.html" class="navigation navigation-next " aria-label="Next page: Definiendo el paradigma funcional"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"katex":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
