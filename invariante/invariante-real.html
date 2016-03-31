@@ -1,0 +1,425 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Programación invariante en el mundo real | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../invariante/fundamentos.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.2"
+        data-chapter-title="Programación invariante en el mundo real"
+        data-filepath="invariante/invariante-real.md"
+        data-basepath=".."
+        data-revision="Thu Mar 31 2016 15:20:52 GMT-0300 (CLT)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="intro/index.html">
+            
+                
+                    <a href="../intro/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Introducción
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="intro/declarativa.html">
+            
+                
+                    <a href="../intro/declarativa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        La programación declarativa
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="intro/funcional.html">
+            
+                
+                    <a href="../intro/funcional.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Definiendo el paradigma funcional
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="invariante/index.html">
+            
+                
+                    <a href="../invariante/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Recursión y programación invariante
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="invariante/fundamentos.html">
+            
+                
+                    <a href="../invariante/fundamentos.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Programación invariante: fundamentos
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="invariante/invariante-real.html">
+            
+                
+                    <a href="../invariante/invariante-real.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Programación invariante en el mundo real
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="listas/index.html">
+            
+            <span><b>3.</b> Listas y coincidencia de patrones</span>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="programaci&#xF3;n-invariante-en-el-mundo-real">Programaci&#xF3;n invariante en el mundo real</h1>
+<p>Ahora que ya sabemos como emplear la programaci&#xF3;n invariante para dise&#xF1;ar
+soluciones recursivas eficientes, es momento de complicar un poco las cosas,
+aplic&#xE1;ndola sobre un ejemplo m&#xE1;s grande. Implementemos una funci&#xF3;n que
+calcule para dos argumentos <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span> y <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span>, el valor de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">x^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.664392em;"></span><span class="strut bottom" style="height:0.664392em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span> (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>&#x2265;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n \geq 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mrel">&#x2265;</span><span class="mord mathrm">0</span></span></span></span>).</p>
+<p>Esta es la definici&#xF3;n simple de lo que buscamos:
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mn>0</mn></msup><mo>=</mo><mn>1</mn><msup><mi>x</mi><mi>n</mi></msup><mo>=</mo><mi>x</mi><mo>&#x22C5;</mo><msup><mi>x</mi><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msup><mi>c</mi><mi>u</mi><mi>a</mi><mi>n</mi><mi>d</mi><mi>o</mi><mi>n</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">
+x^0 = 1
+x^n = x \cdot x^{n-1}   cuando n &gt; 0
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.864108em;"></span><span class="strut bottom" style="height:0.903208em;vertical-align:-0.0391em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">0</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mord mathit">x</span><span class="mbin">&#x22C5;</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.41300000000000003em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">n</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mord mathit">c</span><span class="mord mathit">u</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mord mathit">d</span><span class="mord mathit">o</span><span class="mord mathit">n</span><span class="mrel">&gt;</span><span class="mord mathrm">0</span></span></span></span></span></p>
+<p>Podr&#xED;amos, como ya hemos visto, implementar esta definici&#xF3;n directamente:</p>
+<pre><code>fun Pow(x, n):
+  if n == 0 then return 1
+  else
+    return x * Pow(x, n-1)
+  end
+end
+</code></pre><p>Sin embargo, ya sabemos que esta soluci&#xF3;n es bastante ineficiente, tanto en
+tiempo de ejecuci&#xF3;n como en el espacio de memoria que utiliza. La raz&#xF3;n es que
+no implementa la <em>recursividad por cola</em>, as&#xED; que hace uso desmedido de la pila,
+y que realiza demasiadas multiplicaciones que nos podriamos ahorrar. Si por ejemplo
+el exponente fuera 16, tendr&#xED;a que realizar 16 multiplicaciones, cuando claramente
+ser&#xED;a mucho mejor ir duplicando el exponente en cada iteraci&#xF3;n para as&#xED; realizar
+menos multiplicaciones (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mn>1</mn></msup><mo>&#x21D2;</mo><msup><mi>x</mi><mn>2</mn></msup><mo>&#x21D2;</mo><msup><mi>x</mi><mn>4</mn></msup><mo>&#x21D2;</mo><msup><mi>x</mi><mn>8</mn></msup><mo>&#x21D2;</mo><msup><mi>x</mi><mn>1</mn></msup><mn>6</mn></mrow><annotation encoding="application/x-tex">x^1 \Rightarrow x^2 \Rightarrow x^4 \Rightarrow x^8 \Rightarrow x^16 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">&#x21D2;</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">&#x21D2;</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">4</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">&#x21D2;</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">8</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">&#x21D2;</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mord mathrm">6</span></span></span></span>).
+As&#xED; que, efectivamente, podemos mejorar esta funci&#xF3;n en dos sentidos: en su
+tiempo de ejecuci&#xF3;n y su uso de la memoria.</p>
+<p>Comencemos mejorando su tiempo de ejecuci&#xF3;n. Esta es otra definici&#xF3;n para
+el c&#xE1;lculo del exponente que es mucho mejor en cu&#xE1;nto al n&#xFA;mero de computaciones:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mn>0</mn></msup><mo>=</mo><mn>1</mn><msup><mi>x</mi><mi>n</mi></msup><mo>=</mo><mi>x</mi><mo>&#x22C5;</mo><msup><mi>x</mi><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msup><mi>c</mi><mi>u</mi><mi>a</mi><mi>n</mi><mi>d</mi><mi>o</mi><mi>n</mi><mo>&gt;</mo><mn>0</mn><mi>y</mi><mi>n</mi><mi>e</mi><mi>s</mi><mi>i</mi><mi>m</mi><mi>p</mi><mi>a</mi><mi>r</mi><msup><mi>x</mi><mi>n</mi></msup><mo>=</mo><msup><mi>y</mi><mn>2</mn></msup><mo>(</mo><mi>y</mi><mo>=</mo><msup><mi>x</mi><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><mo>)</mo><mi>c</mi><mi>u</mi><mi>a</mi><mi>n</mi><mi>d</mi><mi>o</mi><mi>n</mi><mo>&gt;</mo><mn>0</mn><mi>y</mi><mi>n</mi><mi>e</mi><mi>s</mi><mi>p</mi><mi>a</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">
+  x^0 = 1
+  x^n = x \cdot x^{n-1}   cuando n &gt; 0 y n es impar
+  x^n = y^2 (y = x^{n/2})  cuando n &gt; 0 y n es par
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.938em;"></span><span class="strut bottom" style="height:1.188em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">0</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mord mathit">x</span><span class="mbin">&#x22C5;</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.41300000000000003em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">n</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mord mathit">c</span><span class="mord mathit">u</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mord mathit">d</span><span class="mord mathit">o</span><span class="mord mathit">n</span><span class="mrel">&gt;</span><span class="mord mathrm">0</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathit">n</span><span class="mord mathit">e</span><span class="mord mathit">s</span><span class="mord mathit">i</span><span class="mord mathit">m</span><span class="mord mathit">p</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mrel">=</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">n</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose">)</span><span class="mord mathit">c</span><span class="mord mathit">u</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mord mathit">d</span><span class="mord mathit">o</span><span class="mord mathit">n</span><span class="mrel">&gt;</span><span class="mord mathrm">0</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathit">n</span><span class="mord mathit">e</span><span class="mord mathit">s</span><span class="mord mathit">p</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span></span></span></span></span></p>
+<p>Esta definici&#xF3;n implica muchas menos multiplicaciones, ya que cuando el exponente
+es par, este se reduce inmediatamente a la mitad. Por cierto, ambas definiciones
+que hemos mostrados son <em>especificaciones</em>. Las especificaciones son descripciones
+puramente matem&#xE1;ticas de lo que queremos calcular sin nada de c&#xF3;digo de por medio.
+ Bueno, en este caso podemos implementar esta definici&#xF3;n de forma casi
+ literal tambi&#xE9;n:</p>
+<pre><code>fun Pow(x, n):
+  if n == 0 then return 1
+  elseif n mod 2 == 1
+    return x * Pow(x, n-1)
+  else
+     var y = Pow(x, n/2)
+     return y*y
+  end
+end
+</code></pre><p>Ahora contamos con una soluci&#xF3;n mucho mejor, que minimiza en gran medida las
+multiplicaciones, pero que a&#xFA;n no es recursiva por cola. A&#xFA;n podemos mejorarla
+a&#xFA;n m&#xE1;s. Pero &#xBF;C&#xF3;mo la convertirmos a una que use recursividad por cola?. Como
+siempre, lo primero que necesitamos es definir una invariante. La invariante es
+la clave para un buen programa, y en espec&#xED;fico, necesitamos una que conste de
+dos partes, una que sirva como un <em>acumulador</em> del resultado que buscamos, y otra
+que se vaya reduciendo poco a poco y limite la ejecuci&#xF3;n del bucle. Afortunadamente,
+la invariante para este problema no es complicada de encontrar. Sabiendo de antemano
+que una potencia es un serie de productos consecutivos, podemos definir nuestra
+invariante como un producto entre <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span> elevado a alg&#xFA;n entero <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>&#x2265;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">i \geq 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.79549em;vertical-align:-0.13597em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span><span class="mrel">&#x2265;</span><span class="mord mathrm">0</span></span></span></span> y
+otro entero <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span> (el acumulador) tal que el total sea igual a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">x^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.664392em;"></span><span class="strut bottom" style="height:0.664392em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span>.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup><mo>=</mo><msup><mi>y</mi><mi>i</mi></msup><mo>&#x22C5;</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">
+x^n = y^i \cdot a
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8746639999999999em;"></span><span class="strut bottom" style="height:1.0691039999999998em;vertical-align:-0.19444em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mbin">&#x22C5;</span><span class="mord mathit">a</span></span></span></span></span></p>
+<p>En esta invariante tanto <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> y <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span> corresponden a valores que van
+variando en cada iteraci&#xF3;n. Y cabe prestar atenci&#xF3;n a este hecho, pues muestra que la definici&#xF3;n
+de una invariante no se tiene porque limitar a dos variables, a&#xFA;n cuando est&#xE9; compuesta
+de s&#xF3;lo dos partes.</p>
+<p>Revisemos ahora como ir modificando los valores de las tres variables de modo
+que la expresi&#xF3;n anterior sea verdadera en cada iteraci&#xF3;n del bucle. Antes, para
+facilitar el an&#xE1;lisis de los valores que ir&#xE1;n tomando las tres variables, podemos
+representarlas de forma compacta como una coleccion de tres valores <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>y</mi><mo separator="true">,</mo><mi>i</mi><mo separator="true">,</mo><mi>a</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(y, i, a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mord mathit">i</span><span class="mpunct">,</span><span class="mord mathit">a</span><span class="mclose">)</span></span></span></span>.
+Bien, consideremos que estamos en el inicio del bucle, &#xBF;Qu&#xE9; valores deber&#xED;an tener <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>y</mi><mo separator="true">,</mo><mi>i</mi><mo separator="true">,</mo><mi>a</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(y, i, a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mord mathit">i</span><span class="mpunct">,</span><span class="mord mathit">a</span><span class="mclose">)</span></span></span></span>
+en esta situaci&#xF3;n? Esta pregunta es f&#xE1;cil, como resulta que a esta altura s&#xF3;lo tenemos
+los valores iniciales <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span> y <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> pasados como argumentos, no hay ciencia en
+deducir que (x, n, 1) deben ser los valores al inicio del bucle. Bien, ya estamos dentro
+de nuestra primera llamada, y llega el momento de hacer una llamada recursiva.
+&#xBF;Qu&#xE9; argumentos pasamos a esta nueva llamada? bueno, en cuanto a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> resulta
+claro que debe ir disminuyendo, pero &#xBF;en cuanto?, depende de la paridad!. Como
+ya vimos con la soluci&#xF3;n anterior, podemos reducir el n&#xFA;mero de multiplicaciones
+si reducimos a la mitad el n&#xFA;mero cuando el exponente sea par. As&#xED; que si <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>
+es par simplemente lo reducimos a la mitad y si es impar, lo reducimos en uno.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>n</mi><mo separator="true">,</mo><mn>1</mn><mo>)</mo><mi>S</mi><mi>i</mi><mi>n</mi><mi>e</mi><mi>s</mi><mi>i</mi><mi>m</mi><mi>p</mi><mi>a</mi><mi>r</mi><mo>&#x21D2;</mo><mo>(</mo><mo>?</mo><mo separator="true">,</mo><mi>n</mi><mo>&#x2212;</mo><mn>1</mn><mo separator="true">,</mo><mo>?</mo><mo>)</mo><mi>S</mi><mi>i</mi><mi>n</mi><mi>e</mi><mi>s</mi><mi>p</mi><mi>a</mi><mi>r</mi><mo>&#x21D2;</mo><mo>(</mo><mo>?</mo><mo separator="true">,</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo separator="true">,</mo><mo>?</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">
+  (x, n, 1) Si n es impar \Rightarrow (?, n - 1, ?)
+            Si n es par   \Rightarrow (?, n/2, ?)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord mathit">n</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mclose">)</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit">e</span><span class="mord mathit">s</span><span class="mord mathit">i</span><span class="mord mathit">m</span><span class="mord mathit">p</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mrel">&#x21D2;</span><span class="mopen">(</span><span class="mclose">?</span><span class="mpunct">,</span><span class="mord mathit">n</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mclose">?</span><span class="mclose">)</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit">e</span><span class="mord mathit">s</span><span class="mord mathit">p</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mrel">&#x21D2;</span><span class="mopen">(</span><span class="mclose">?</span><span class="mpunct">,</span><span class="mord mathit">n</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mclose">?</span><span class="mclose">)</span></span></span></span></span></p>
+<p>Ahora, si al exponente le quitamos 1, &#xBF;Cuanto debiera aumentar el acumulador?.
+Depende del valor de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>, por supuesto. Pero para que nos vamos a complicar las
+cosas modificando a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span> en este caso. Simplemente podemos mantener a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span> constante,
+y entonces simplemente debemos multiplicar el acumulador por este valor. &#xBF;Y si
+reducimos el exponente a la mitad? En este caso nuevamente va a depender del valor
+que definamos para <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>, pero tratemos de pensar en un valor sencillo, basado
+en la soluci&#xF3;n anterior. La soluci&#xF3;n anterior defin&#xED;a a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">y = x^{n/2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8879999999999999em;"></span><span class="strut bottom" style="height:1.0824399999999998em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mrel">=</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">n</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span>. Podr&#xED;amos
+por lo tanto, aumentar <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span> de modo que tome el valor  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>&#x22C5;</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">y \cdot y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.44445em;"></span><span class="strut bottom" style="height:0.63889em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mbin">&#x22C5;</span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span> y como
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo>&#x22C5;</mo><mi>x</mi><msup><mo>)</mo><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><mo>=</mo><msup><mi>x</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">(x \cdot x)^{n/2} = x^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8879999999999999em;"></span><span class="strut bottom" style="height:1.138em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mbin">&#x22C5;</span><span class="mord mathit">x</span><span class="mclose"><span class="mclose">)</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">n</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span> no tendr&#xED;amos motivo para aumentar el multiplicador.
+A fin de cuentas, no importa si <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span> aumenta o no, pues es el valor de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span>
+el que importa que se reduzca lo m&#xE1;s r&#xE1;pido posible. Es <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> el valor que define
+cuando terminar el bucle.</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>n</mi><mo separator="true">,</mo><mn>1</mn><mo>)</mo><mi>S</mi><mi>i</mi><mi>n</mi><mi>e</mi><mi>s</mi><mi>i</mi><mi>m</mi><mi>p</mi><mi>a</mi><mi>r</mi><mo>&#x21D2;</mo><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>n</mi><mo>&#x2212;</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo>&#x22C5;</mo><mi>x</mi><mo>)</mo><mo>(</mo><msup><mi>x</mi><mi>n</mi></msup><mo>=</mo><msup><mi>x</mi><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msup><mo>&#x22C5;</mo><mi>x</mi><mo>)</mo><mi>S</mi><mi>i</mi><mi>n</mi><mi>e</mi><mi>s</mi><mi>p</mi><mi>a</mi><mi>r</mi><mo>&#x21D2;</mo><mo>(</mo><mi>x</mi><mo>&#x22C5;</mo><mi>x</mi><mo separator="true">,</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo><mo>(</mo><msup><mi>x</mi><mi>n</mi></msup><mo>=</mo><mo>(</mo><mi>x</mi><mo>&#x22C5;</mo><mi>x</mi><msup><mo>)</mo><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><mo>&#x22C5;</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">
+  (x, n , 1) Si n es impar \Rightarrow (x, n - 1, 1 \cdot x) (x^n = x^{n-1} \cdot x)
+             Si n es par   \Rightarrow (x \cdot x, n/2, 1) (x^n = (x\cdot x)^{n/2} \cdot 1)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.938em;"></span><span class="strut bottom" style="height:1.188em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord mathit">n</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mclose">)</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit">e</span><span class="mord mathit">s</span><span class="mord mathit">i</span><span class="mord mathit">m</span><span class="mord mathit">p</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mrel">&#x21D2;</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord mathit">n</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mbin">&#x22C5;</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.41300000000000003em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">n</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mbin">&#x22C5;</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit">e</span><span class="mord mathit">s</span><span class="mord mathit">p</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mrel">&#x21D2;</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mbin">&#x22C5;</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord mathit">n</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">x</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mbin">&#x22C5;</span><span class="mord mathit">x</span><span class="mclose"><span class="mclose">)</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">n</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mbin">&#x22C5;</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span></span></p>
+<p>Una vez que definimos como transformar los valores de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>y</mi><mo separator="true">,</mo><mi>i</mi><mo separator="true">,</mo><mi>a</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(y, i, a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mord mathit">i</span><span class="mpunct">,</span><span class="mord mathit">a</span><span class="mclose">)</span></span></span></span> para la primera
+llamada recursiva, ya sabemos, de hecho, como realizar todas las dem&#xE1;s llamadas
+recursivas. Adicionalmente, el bucle finalizar&#xE1; una vez <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">i = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span><span class="mrel">=</span><span class="mord mathrm">0</span></span></span></span>, y el acumulador
+ya almacena la respuesta que buscamos. Con eso dicho, ya tenemos todo lo necesario,
+y ahora simplemente nos queda escribir la implementaci&#xF3;n:</p>
+<pre><code>fun Pow(y, i, a):
+  if(i == 0) then return a
+  elseif(i mod 2 == 1)
+    return Pow(y, i-1, a*y)
+  else
+    return Pow(y*y, i/2, a)
+  end
+end
+</code></pre><p>Finalmente, aplicando programaci&#xF3;n invariante hemos obtenido una adaptaci&#xF3;n del
+algoritmo con un n&#xFA;mero mucho menor de multiplicaciones, que adem&#xE1;s es mucho
+m&#xE1;s eficiente en el uso de memoria gracias a emplear la <em>recursividad por cola</em>.
+El proceso general, de hecho, desde la definici&#xF3;n matem&#xE1;tica hasta la definici&#xF3;n
+de nuestra invariante ha sido bastante elegante.</p>
+<p><strong>Ejercicio</strong>: <br>
+Reescribe Pow de modo que s&#xF3;lo tome un argumento.</p>
+<p><strong>Ejercicio</strong>: <br>
+Usando programaci&#xF3;n invariante escribe una funci&#xF3;n que retorne el n-&#xE9;simo
+n&#xFA;mero de fibonacci. La funci&#xF3;n debe tomar un s&#xF3;lo argumento <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span>.</p>
+<p>Pista: Las invariantes no se tienen porque limitar a un s&#xF3;lo acumulador.</p>
+<h3 id="invariantes-y-metas">Invariantes y metas</h3>
+<p>Habiendo comprendido los ejemplos y habiendo resuelto los ejercicios propuestos,
+ya deber&#xED;as contar con un dominio significativo de la t&#xE9;cnica de la programaci&#xF3;n
+invariante. Para finalizar esta secci&#xF3;n, vale la pena recalcar ciertas caracter&#xED;sticas
+que acompa&#xF1;an a esta t&#xE9;cnica que siempre se deber&#xED;an tener en cuenta.</p>
+<ul>
+<li><p>Si una parte de la invariante cambia, eso fuerza al resto a cambiar tambi&#xE9;n,
+ya que <em>la invariante permanecer verdadera</em>. Esta propiedad es el motor que lleva
+al programa hacia la respuesta.</p>
+</li>
+<li><p>Programar un bucle significa encontrar una buena invariante. Una vez que se
+encuentra una invariante, la codificaci&#xF3;n es sencilla. Todo el truco est&#xE1; en
+aprender a pensar en t&#xE9;rminos de invariantes!, no pienses en los bucles c&#xF3;mo
+c&#xF3;digo que se repite, sino c&#xF3;mo en f&#xF3;rmulas que se mantienen ciertas.</p>
+</li>
+<li><p>Programar con invariantes nos lleva a una t&#xE9;cnica m&#xE1;s general y poderosa
+llamada  <em>programaci&#xF3;n orientada a metas</em>. En este t&#xE9;cnica definimos una meta
+y el programa se mantiene trabajando hacia esa meta. Ya veremos otro ejemplo
+de esta t&#xE9;cnica m&#xE1;s adelante cuando comencemos a programar con &#xE1;rboles.
+(Las invariantes son un caso particular de esta t&#xE9;cnica)</p>
+</li>
+</ul>
+<p><strong>Debate</strong>: <br></p>
+<p>&#xBF;Qu&#xE9; piensas sobre los programas funcionales y imperativos?</p>
+<p>&#xBF;Qu&#xE9; utilidad crees que tienen las invariantes?&#xBF;Consideras que los programadores
+realmente las necesitan?&#xBF;Crees que en algunos casos son in&#xFA;tiles y otros una
+obligaci&#xF3;n?</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../invariante/fundamentos.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Programación invariante: fundamentos"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"katex":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

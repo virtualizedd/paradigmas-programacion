@@ -1,0 +1,566 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Programación invariante: fundamentos | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../invariante/invariante-real.html" />
+    
+    
+    <link rel="prev" href="../invariante/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.1"
+        data-chapter-title="Programación invariante: fundamentos"
+        data-filepath="invariante/fundamentos.md"
+        data-basepath=".."
+        data-revision="Thu Mar 31 2016 15:20:52 GMT-0300 (CLT)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="intro/index.html">
+            
+                
+                    <a href="../intro/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Introducción
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="intro/declarativa.html">
+            
+                
+                    <a href="../intro/declarativa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        La programación declarativa
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="intro/funcional.html">
+            
+                
+                    <a href="../intro/funcional.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Definiendo el paradigma funcional
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="invariante/index.html">
+            
+                
+                    <a href="../invariante/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Recursión y programación invariante
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1" data-path="invariante/fundamentos.html">
+            
+                
+                    <a href="../invariante/fundamentos.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Programación invariante: fundamentos
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="invariante/invariante-real.html">
+            
+                
+                    <a href="../invariante/invariante-real.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Programación invariante en el mundo real
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="listas/index.html">
+            
+            <span><b>3.</b> Listas y coincidencia de patrones</span>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="programaci&#xF3;n-invariante-fundamentos">Programaci&#xF3;n invariante: fundamentos</h1>
+<p>En la secci&#xF3;n anterior vimos un ejemplo del potencial de resoluci&#xF3;n de problemas
+que ofrece combinar la recursividad y una instrucci&#xF3;n condicional. Y si observamos
+bien el comportamiento de ese programa en espec&#xED;fico
+podemos notar que act&#xFA;a de modo similar a un bucle (un conjunto de instrucciones
+que se repite hasta lograr un resultado) donde cada ejecuci&#xF3;n recursiva se puede
+ver como una iteraci&#xF3;n del bucle. Esto muestra que, de hecho, uno de
+los usos potenciales de la recursi&#xF3;n es definir bucles. Y los bucles, estas
+partes de los programas que se repiten hasta que se cumpla cierta condici&#xF3;n, son
+una t&#xE9;cnica importante en todos los paradigmas de programaci&#xF3;n. De hecho, son
+un caso especial de recursi&#xF3;n, llamado <em>recursividad por cola</em> (<em>tail recursion</em>),
+en el que la llamada recursiva es la &#xFA;ltima operaci&#xF3;n que realiza la funci&#xF3;n.
+Hay por lo tanto, otros modos de implementar la recursividad. Pero,
+por ahora nos centraremos en su uso como bucles, y en concreto, en una t&#xE9;cnica
+conocida como programaci&#xF3;n invariante que nos permite programar bucles correctos
+y eficientes. Y no es una cosa menor, los bucles pueden ser complicados de programar,
+especialmente cuando se trata de fijar sus condiciones l&#xED;mites. Con la programaci&#xF3;n
+invariante tendremos un m&#xE9;todo para asegurarnos de que nuestros bucles hacen
+exactamente lo correcto, que de hecho, ser&#xE1; aplicable no s&#xF3;lo en el estilo funcional,
+sino tambi&#xE9;n a los bucles usados en cualquier otro paradigma, incluyendo a los
+paradigmas imperativos.</p>
+<h3 id="el-principio-de-los-vasos-comunicantes">El principio de los vasos comunicantes</h3>
+<p>La forma de resolver el problema de sumar los d&#xED;gitos de un n&#xFA;mero en base 10
+se ve&#xED;a tan simple y natural que podr&#xED;amos sentir que es la &#xFA;nica forma de hacerlo
+usando recursividad. Sin embargo, esta intuici&#xF3;n est&#xE1; completamente errada. Hay
+una forma muy diferente de resolver el problema que, en realidad, es mucho mejor.
+Pero antes de revisar esa otra soluci&#xF3;n y con el fin de comprender el principio
+que la sustenta veamos primero un ejemplo m&#xE1;s sencillo, el cl&#xE1;sico calcular el factorial
+de un n&#xFA;mero.</p>
+<p>Escribamos primero una <em>especificaci&#xF3;n</em> de la funci&#xF3;n (el problema que vamos
+a resolver). Una especificaci&#xF3;n no es m&#xE1;s que una f&#xF3;rmula matem&#xE1;tica que describe
+que calcula una funci&#xF3;n. En este caso ser&#xED;a</p>
+<pre><code>// Funci&#xF3;n factorial
+// 0! = 1                   
+// n! = n*(n-1)*...*2*1     cuando n &gt; 0
+</code></pre><p>Bien, perfectamente podr&#xED;amos traducir directamente lo anterior a un programa
+y as&#xED; resolver este problema.</p>
+<pre><code>fun fact1(n):
+    if n == 0 then return 1
+    else
+        return n * fact1(n - 1)
+    end
+end
+</code></pre><p>El c&#xF3;digo anterior funciona bien, de hecho, sigue casi de manera literal la
+definici&#xF3;n matem&#xE1;tica o especificaci&#xF3;n de la funci&#xF3;n. Sin embargo, esta es s&#xF3;lo
+una forma de implementarla, hay otra completamente distinta y que es mucho mejor.
+Esta otra forma comienza con algo que llamamos <em>invariante</em>. Una invariante es
+una f&#xF3;rmula matem&#xE1;tica que se cumple durante toda la ejecuci&#xF3;n de un bucle y a
+partir de la cual podemos derivar la especificaci&#xF3;n de la funci&#xF3;n que queremos
+implementar. El proceso anterior resume, de hecho, lo que se conoce como
+<em>programaci&#xF3;n invariante</em>. Revisemos ahora como podemos aplicar esta t&#xE9;cnica para resolver
+el problema de calcular un factorial.</p>
+<p>El primer paso es definir nuestra <em>invariante</em>. Y
+Como se mencion&#xF3; m&#xE1;s arriba esta debe ser una f&#xF3;rmula matem&#xE1;tica que
+sea verdadera durante cada una de las iteraciones
+de un bucle. De hecho, de ah&#xED; el nombre de invariante (pues no var&#xED;a su valor de
+verdad). Este paso es el primero y el m&#xE1;s importante, pues ser&#xE1; a partir de
+esta invariante que construiremos la especificaci&#xF3;n de nuestra funci&#xF3;n. Ahora
+cabe preguntarse, &#xBF;C&#xF3;mo encontramos esa invariante?. Para ello podemos aplicar
+un enfoque
+que se conoce como <em>principio de los vasos comunicantes</em>. Ya se entender&#xE1; bien
+el porque lleva este nombre, por ahora centremos nuestra atenci&#xF3;n a c&#xF3;mo definimos
+la invariante. En este enfoque lo que hacemos es definir una f&#xF3;rmula que divida
+el trabajo en dos partes. De modo que tomamos la expresi&#xF3;n <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>!</mo></mrow><annotation encoding="application/x-tex">n!</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mclose">!</span></span></span></span> (el trabajo que
+queremos realizar), y nos inventamos una f&#xF3;rmula que la divida en dos. En este
+caso nos inventamos esto:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>!</mo><mo>=</mo><mi>i</mi><mo>!</mo><mo>&#x22C5;</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">
+n! = i! \cdot a
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">n</span><span class="mclose">!</span><span class="mrel">=</span><span class="mord mathit">i</span><span class="mclose">!</span><span class="mbin">&#x22C5;</span><span class="mord mathit">a</span></span></span></span></span></p>
+<p>Con esto hemos dividido el c&#xE1;lculo de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>!</mo></mrow><annotation encoding="application/x-tex">n!</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mclose">!</span></span></span></span> como un producto entre dos
+valores arbitrarios <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>!</mo></mrow><annotation encoding="application/x-tex">i!</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span><span class="mclose">!</span></span></span></span> y <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span>, siendo cada valor una de las dos partes.
+Ahora, &#xBF;C&#xF3;mo hacemos que esta expresi&#xF3;n sea una invariante?. Lo &#xFA;nico que
+necesitamos para que lo sea es que la f&#xF3;rmula sea verdadera en cada
+iteraci&#xF3;n del bucle, y eso no es muy complicado de conseguir la verdad. Simplemente
+definimos un bucle que tome inicialmente dos variables <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>=</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">i = n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span><span class="mrel">=</span><span class="mord mathit">n</span></span></span></span> y <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span>, y
+luego el truco es que a medida <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> disminuye, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span> vaya aumentando de modo que siempre se cumpla que
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>!</mo><mo>&#x22C5;</mo><mi>a</mi><mo>=</mo><mi>n</mi><mo>!</mo></mrow><annotation encoding="application/x-tex">i! \cdot a = n!</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span><span class="mclose">!</span><span class="mbin">&#x22C5;</span><span class="mord mathit">a</span><span class="mrel">=</span><span class="mord mathit">n</span><span class="mclose">!</span></span></span></span>. Luego, tras un par de iteraciones finalizamos el bucle cuando <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> sea igual a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span></span></span></span>,
+momento en el que el valor de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span> ser&#xE1; igual a la respuesta que buscamos.
+Ya con esto tenemos casi todo listo. Ya tenemos nuestra f&#xF3;rmula junto a una
+definici&#xF3;n del bucle que la hace una invariante, y a partir de la cu&#xE1;l podemos
+derivar el resultado que buscamos. A continuaci&#xF3;n se pueden ver los valores que van tomando
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> y <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span> en las sucesivas iteraciones en un caso en general:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>!</mo><mo>=</mo><mi>n</mi><mo>!</mo><mo>&#x22C5;</mo><mn>1</mn><mi>n</mi><mo>!</mo><mo>=</mo><mo>(</mo><mi>n</mi><mo>&#x2212;</mo><mn>1</mn><mo>)</mo><mo>!</mo><mo>&#x22C5;</mo><mi>n</mi><mo>&#x2026;</mo><mi>n</mi><mo>!</mo><mo>=</mo><mn>1</mn><mo>!</mo><mo>&#x22C5;</mo><mi>n</mi><mo>!</mo><mi>n</mi><mo>!</mo><mo>=</mo><mn>0</mn><mo>!</mo><mo>&#x22C5;</mo><mi>n</mi><mo>!</mo></mrow><annotation encoding="application/x-tex">
+n! = n!\cdot 1
+n! = (n - 1)! \cdot n
+\ldots
+n! = 1! \cdot n!
+n! = 0! \cdot n!
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">n</span><span class="mclose">!</span><span class="mrel">=</span><span class="mord mathit">n</span><span class="mclose">!</span><span class="mbin">&#x22C5;</span><span class="mord mathrm">1</span><span class="mord mathit">n</span><span class="mclose">!</span><span class="mrel">=</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span><span class="mclose">)</span><span class="mclose">!</span><span class="mbin">&#x22C5;</span><span class="mord mathit">n</span><span class="minner">&#x2026;</span><span class="mord mathit">n</span><span class="mclose">!</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mclose">!</span><span class="mbin">&#x22C5;</span><span class="mord mathit">n</span><span class="mclose">!</span><span class="mord mathit">n</span><span class="mclose">!</span><span class="mrel">=</span><span class="mord mathrm">0</span><span class="mclose">!</span><span class="mbin">&#x22C5;</span><span class="mord mathit">n</span><span class="mclose">!</span></span></span></span></span></p>
+<p>Y aqu&#xED; para el caso para concreto de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">n = 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mrel">=</span><span class="mord mathrm">4</span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>!</mo><mo>=</mo><mn>4</mn><mo>!</mo><mo>&#x22C5;</mo><mn>1</mn><mn>4</mn><mo>!</mo><mo>=</mo><mn>3</mn><mo>!</mo><mo>&#x22C5;</mo><mn>4</mn><mn>4</mn><mo>!</mo><mo>=</mo><mn>2</mn><mo>!</mo><mo>&#x22C5;</mo><mn>1</mn><mn>2</mn><mn>4</mn><mo>!</mo><mo>=</mo><mn>1</mn><mo>!</mo><mo>&#x22C5;</mo><mn>2</mn><mn>4</mn><mn>4</mn><mo>!</mo><mo>=</mo><mn>0</mn><mo>!</mo><mo>&#x22C5;</mo><mn>2</mn><mn>4</mn></mrow><annotation encoding="application/x-tex">
+4! = 4! \cdot 1
+4! = 3! \cdot 4
+4! = 2! \cdot 12
+4! = 1! \cdot 24
+4! = 0! \cdot 24
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathrm">4</span><span class="mclose">!</span><span class="mrel">=</span><span class="mord mathrm">4</span><span class="mclose">!</span><span class="mbin">&#x22C5;</span><span class="mord mathrm">1</span><span class="mord mathrm">4</span><span class="mclose">!</span><span class="mrel">=</span><span class="mord mathrm">3</span><span class="mclose">!</span><span class="mbin">&#x22C5;</span><span class="mord mathrm">4</span><span class="mord mathrm">4</span><span class="mclose">!</span><span class="mrel">=</span><span class="mord mathrm">2</span><span class="mclose">!</span><span class="mbin">&#x22C5;</span><span class="mord mathrm">1</span><span class="mord mathrm">2</span><span class="mord mathrm">4</span><span class="mclose">!</span><span class="mrel">=</span><span class="mord mathrm">1</span><span class="mclose">!</span><span class="mbin">&#x22C5;</span><span class="mord mathrm">2</span><span class="mord mathrm">4</span><span class="mord mathrm">4</span><span class="mclose">!</span><span class="mrel">=</span><span class="mord mathrm">0</span><span class="mclose">!</span><span class="mbin">&#x22C5;</span><span class="mord mathrm">2</span><span class="mord mathrm">4</span></span></span></span></span></p>
+<p>Para finalizar, s&#xF3;lo nos queda implementar la idea en una funci&#xF3;n. En este caso
+cada iteraci&#xF3;n ir&#xE1; tomando dos valores <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> y <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span>, de modo que la funci&#xF3;n
+que definamos tomar&#xE1; dos argumentos, uno representando a cada valor. En cuanto
+a las sucesivas llamadas recursivas, hasta ahora s&#xF3;lo hemos mencionado que <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> ir&#xE1; disminuyendo en 1,
+y de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span> solo hemos dicho que ir&#xE1; aumentando. Queda, por lo tanto, definir en
+cu&#xE1;nto ir&#xE1; aumentando <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span>. Pero no es nada complicado de determinar. Si se observan las igualdades
+mostradas m&#xE1;s arribas, r&#xE1;pidamente uno puedo notar que el patr&#xF3;n de crecimiento
+de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span> es que va siendo multiplicado por el valor de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> en cada iteraci&#xF3;n.
+Podemos concluir, por lo tanto, que en llamada recursiva tendremos que llamar a la funci&#xF3;n
+con los argumentos <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i -1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span> y <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>&#x22C5;</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">i \cdot a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span><span class="mbin">&#x22C5;</span><span class="mord mathit">a</span></span></span></span>. Finalmente, la recursi&#xF3;n debe
+terminar cuando $i$ sea igual a 0, en cuyo caso, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span> contendr&#xE1; la respuesta que
+buscamos, y por lo tanto, ser&#xE1; el valor a retornar. Con esto ya tenemos todos los
+datos necesarios para armar nuestro c&#xF3;digo y obtener la implementaci&#xF3;n que se ve a continuaci&#xF3;n:</p>
+<pre><code>fun fact2(i, a):
+    if i == 0 then return a
+    else
+        return fact2(i-1, i*a)
+    end
+end
+</code></pre><p><strong>Nota</strong>: Ahora que ya entendemos como funciona el enfoque, no deber&#xED;a sorprender
+el nombre que recibe. El t&#xE9;rmino <em>principio de los vasos comunicantes</em> viene de la
+analog&#xED;a entre la l&#xF3;gica que propone con dos vasos conectados de tal
+forma que poco a poco uno va disminuyendo su volumen de l&#xED;quido, mientras el otro
+va recibiendo el l&#xED;quido que pierde este otro vaso.</p>
+<p><img src="img/communicating_vases.png" alt=""></p>
+<p><strong>Nota2</strong>: Cuando se aplica el principio de vasos comunicantes, la segunda
+variable, aquella que va recolectando llamada a llamada el total de la operaci&#xF3;n,
+tambi&#xE9;n se la identifica com&#xFA;nmente con el t&#xE9;rmino de <em>acumulador</em>, pues es
+la variable que se encarga de ir acumulando el resultado de m&#xFA;ltiples operaciones.</p>
+<p>Bien, tal como mencionamos, hemos obtenido una soluci&#xF3;n completamente diferente.
+As&#xED; que efectivamente hab&#xED;a otra forma de resolverlo. En particular, usando
+<em>programaci&#xF3;n invariante</em>, y a&#xFA;n m&#xE1;s espec&#xED;fico, aplicando el <em>principio de los
+vasos comunicantes</em> para obtener nuestra invariante. Siguiendo este enfoque,
+definimos una f&#xF3;rmula a partir de dividir en dos partes la expresi&#xF3;n original,
+y luego iteramos disminuyendo una de las partes, mientras aumentando otra, de modo
+que la f&#xF3;rmula siempre se cumpla. Todo bien, sin embargo, a&#xFA;n nos queda un detalle
+que aclarar. Aparte de decir que hab&#xED;a una soluci&#xF3;n completamente distinta, tambi&#xE9;n
+mencionamos que esta otra soluci&#xF3;n era &#xAB;mejor&#xBB;. &#xBF;Y en qu&#xE9; sentido esta soluci&#xF3;n es
+mejor a la anterior? Si tomamos c&#xF3;mo criterio el n&#xFA;mero de iteraciones, claramente
+la ventaja no est&#xE1; all&#xED;, pues ambos algoritmos realizan un total de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> iteraciones.
+La ventaja de este &#xFA;ltimo, m&#xE1;s que en el tiempo, est&#xE1; en el espacio de memoria que
+utiliza. En el primer caso (fact1), cuando en una llamada de la funci&#xF3;n se
+alcanza la instrucci&#xF3;n <code>return n * fact(n-1)</code>, la funci&#xF3;n debe esperar la resoluci&#xF3;n
+de <code>fact(n - 1)</code> antes de poder calcular <code>n * fact(n - 1)</code>. Eso implica que mientras se
+espera que <code>fact(n - 1)</code> termine de ejecutarse, se deba almacenar la operaci&#xF3;n completa <code>n * fact(n - 1)</code>
+ en alg&#xFA;n lugar de la memoria. En otras palabras el programa debe recordar
+qu&#xE9; hacer con el valor de retorno hasta, efectivamente, contar con ese valor;
+y eso, consume memoria. Y no poca en realidad, considerando que se realizan n
+llamadas recursivas en total, de modo que en alg&#xFA;n momento tendr&#xE1; n - 1
+operaciones que almacenar!. Por el otro lado, nuestra versi&#xF3;n aplicando programaci&#xF3;n invariante
+es mucho m&#xE1;s econ&#xF3;mica por el simple hecho de que la llamada recursiva es la &#xFA;ltima acci&#xF3;n
+que realiza la funci&#xF3;n, y por lo tanto, cuando finalice esa llamada recursiva no es necesario
+regresar a la funci&#xF3;n anterior para realizar alguna operaci&#xF3;n adicional sobre ese valor. No
+hay necesidad de almacenar en memoria una operaci&#xF3;n, un &#xAB;qu&#xE9; hacer&#xBB; con el valor obtenido
+al finalizar la ejecuci&#xF3;n de la llamada recursiva, y esa es una tremenda ventaja de
+las soluciones obtenidas mediante la programaci&#xF3;n invariante. A estas soluciones
+los compiladores/int&#xE9;rpretes las pueden tratar como si se trataran de bucles. De
+hecho, como ya se mencion&#xF3; al inicio, los bucles son un tipo espec&#xED;fico de recursi&#xF3;n,
+llamado <em>recursividad por cola</em>, donde la llamada recursiva es la &#xFA;nica instrucci&#xF3;n
+que realiza al final una funci&#xF3;n. Con programaci&#xF3;n invariante podemos justamente
+construir ese tipo de funciones, bucles correctos y eficientes.</p>
+<p><strong>Nota</strong>: El lugar donde se almacenan las operaciones pendientes en las llamadas
+recursivas se suele denominar &#xAB;una pila de ejecuci&#xF3;n&#xBB; (stack), pues el modo de
+almacenarlas es justamente el de una pila, d&#xF3;nde lo &#xFA;ltimo que entra es lo primero
+que sale (principio LIFO).</p>
+<p><strong>Ejercicio</strong>: <br>
+Escribe una funci&#xF3;n que calcule <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msubsup><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msubsup><msup><mi>i</mi><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \sum_{i=1}^{n} i^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.6513970000000002em;"></span><span class="strut bottom" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="base textstyle uncramped"><span class="reset-textstyle displaystyle textstyle uncramped"><span class="mop op-limits"><span class="vlist"><span style="top:1.1776689999999999em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">i</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span><span style="top:-0.000005000000000143778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span><span class="op-symbol large-op mop">&#x2211;</span></span></span><span style="top:-1.2500050000000003em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord mathit">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mord"><span class="mord mathit">i</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span> aplicando
+programaci&#xF3;n invariante.</p>
+<h3 id="la-suma-de-los-d&#xED;gitos">La suma de los d&#xED;gitos</h3>
+<p>Ahora que ya sabemos aplicar la t&#xE9;cnica de la programaci&#xF3;n invariante sobre un
+ejemplo m&#xE1;s sencillo, regresemos a nuestro problema inicial de encontrar la
+suma de los d&#xED;gitos de un n&#xFA;mero en base 10. Ya lo resolvimos de una manera, pero
+ahora que ya sabemos que hay una opci&#xF3;n mucho mejor, m&#xE1;s amigable con el uso de
+memoria, tratemos de implementar esa otra manera. Lo primero es definir nuestra
+invariante. En este caso, cada vez iremos reduciendo en un d&#xED;gito al n&#xFA;mero original
+y llevaremos un registro de la suma total de todos los digitos en un acumulador.
+Y esas ser&#xE1;n por tanto nuestras dos partes. Para poder expresar nuestra invariante
+c&#xF3;mo una f&#xF3;rmula consideremos que nuestro n&#xFA;mero es igual a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>d</mi><mrow><mi>n</mi></mrow></msub><msub><mi>d</mi><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msub><mo>&#x2026;</mo><msub><mi>d</mi><mrow><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">d_{n}d_{n-1} \ldots d_{1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.902771em;vertical-align:-0.208331em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">n</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="minner">&#x2026;</span><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span>,
+d&#xF3;nde cada <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>d</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">d_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span> es un d&#xED;gito del n&#xFA;mero. Dicho esto, podemos escribir lo
+siguiente:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>u</mi><mi>m</mi><mi>a</mi><mi>d</mi><mi>i</mi><mi>g</mi><mi>i</mi><mi>t</mi><mi>o</mi><mi>s</mi><mo>(</mo><msub><mi>d</mi><mrow><mi>n</mi></mrow></msub><msub><mi>d</mi><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msub><mo>&#x2026;</mo><msub><mi>d</mi><mrow><mn>1</mn></mrow></msub><mo>)</mo><mo>=</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>a</mi><mi>d</mi><mi>i</mi><mi>g</mi><mi>i</mi><mi>t</mi><mi>o</mi><mi>s</mi><mo>(</mo><msub><mi>d</mi><mrow><mi>n</mi></mrow></msub><msub><mi>d</mi><mrow><mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msub><mo>&#x2026;</mo><msub><mi>d</mi><mrow><mi>i</mi></mrow></msub><mo>)</mo><mo>+</mo><msub><mi>d</mi><mrow><mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>d</mi><mrow><mi>i</mi><mo>&#x2212;</mo><mn>2</mn></mrow></msub><mo>+</mo><mo>&#x2026;</mo><mo>+</mo><msub><mi>d</mi><mrow><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">
+sumadigitos(d_{n}d_{n - 1} \ldots d_{1}) = sumadigitos(d_{n}d_{n-1} \ldots d_{i}) + d_{i-1} + d_{i-2} + \ldots + d_{1}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">s</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">i</span><span class="mord mathit">t</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">n</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="minner">&#x2026;</span><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathit">s</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">i</span><span class="mord mathit">t</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">n</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">n</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="minner">&#x2026;</span><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">i</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose">)</span><span class="mbin">+</span><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">i</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mbin">+</span><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">i</span><span class="mbin">&#x2212;</span><span class="mord mathrm">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mbin">+</span><span class="minner">&#x2026;</span><span class="mbin">+</span><span class="mord"><span class="mord mathit">d</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></p>
+<p>O expresado de una forma &#xAB;m&#xE1;s f&#xE1;cil de comprender&#xBB;:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>u</mi><mi>m</mi><mi>a</mi><mi>d</mi><mi>i</mi><mi>g</mi><mi>i</mi><mi>t</mi><mi>o</mi><mi>s</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>s</mi><mi>u</mi><mi>m</mi><mi>a</mi><mi>d</mi><mi>i</mi><mi>g</mi><mi>i</mi><mi>t</mi><mi>o</mi><mi>s</mi><mo>(</mo><mi>n</mi><mi>s</mi><mi>i</mi><mi>n</mi><mi>c</mi><mi>i</mi><mi>e</mi><mi>r</mi><mi>t</mi><mi>a</mi><mi>c</mi><mi>a</mi><mi>n</mi><mi>t</mi><mi>i</mi><mi>d</mi><mi>a</mi><mi>d</mi><mi>i</mi><mi>d</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>g</mi><mi>i</mi><mi>t</mi><mi>o</mi><mi>s</mi><mi>a</mi><mi>l</mi><mi>f</mi><mi>i</mi><mi>n</mi><mi>a</mi><mi>l</mi><mo>)</mo><mo>+</mo><mi>l</mi><mi>a</mi><mi>s</mi><mi>u</mi><mi>m</mi><mi>a</mi><mi>d</mi><mi>e</mi><mi>l</mi><mi>o</mi><mi>s</mi><mi>i</mi><mi>d</mi><mi>i</mi><mi>g</mi><mi>i</mi><mi>t</mi><mi>o</mi><mi>s</mi><mi>q</mi><mi>u</mi><mi>e</mi><mi>l</mi><mi>e</mi><mi>f</mi><mi>a</mi><mi>l</mi><mi>t</mi><mi>a</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">
+sumadigitos(n) = sumadigitos(n sin cierta cantidad i de digitos al final) + la suma de los i digitos que le faltan
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">s</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">i</span><span class="mord mathit">t</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathit">s</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">i</span><span class="mord mathit">t</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mord mathit">s</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit">c</span><span class="mord mathit">i</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mord mathit">a</span><span class="mord mathit">c</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mord mathit">t</span><span class="mord mathit">i</span><span class="mord mathit">d</span><span class="mord mathit">a</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit">d</span><span class="mord mathit">e</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">i</span><span class="mord mathit">t</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mclose">)</span><span class="mbin">+</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">a</span><span class="mord mathit">s</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">d</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="mord mathit">i</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">i</span><span class="mord mathit">t</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="mord mathit" style="margin-right:0.03588em;">q</span><span class="mord mathit">u</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">t</span><span class="mord mathit">a</span><span class="mord mathit">n</span></span></span></span></span>  </p>
+<p>Es decir, que la suma de los d&#xED;gitos de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> es igual a la suma de cierta parte de los d&#xED;gitos de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span>
+m&#xE1;s la suma de todos los d&#xED;gitos no considerados. Y como en cada iteraci&#xF3;n del bucle
+iremos retirando el &#xFA;ltimo d&#xED;gito del n&#xFA;mero, al mismo tiempo que sumamos ese d&#xED;gito
+al acumulador, lo anterior se cumplir&#xE1; a lo largo de toda la ejecuci&#xF3;n del bucle.
+Ahora s&#xF3;lo nos queda definir los valores iniciales, c&#xF3;mo ir reduciendo el n&#xFA;mero,
+como ir sumando su &#xFA;ltimo d&#xED;gito al acumulador, y cuando terminar la recursi&#xF3;n.
+Lo primero es lo m&#xE1;s sencillo, en cierto
+modo es trivial que el valor inicial para la parte representando lo que va
+quedando del n&#xFA;mero debe ser el n&#xFA;mero completo
+y para el acumulador el valor 0. En cuanto a lo segundo, c&#xF3;mo llamar a la funci&#xF3;n
+con una versi&#xF3;n del n&#xFA;mero sin su &#xFA;ltimo d&#xED;gito, podemos hacer uso de la divisi&#xF3;n
+entera tal como en la primera soluci&#xF3;n que presentamos. Pasando como argumento
+la operaci&#xF3;n n div 10, podemos por lo tanto, cumplir con este objetivo. Algo similar
+sucede para el c&#xF3;mo sumar su &#xFA;ltimo d&#xED;gito al acumulador. En este caso, podemos
+emplear el operador m&#xF3;dulo, del mismo modo que hicimos antes, podemos tomar (n mod 10) y sumar
+el resultado de esa operaci&#xF3;n al acumulador. Finalmente, &#xBF;cu&#xE1;ndo terminamos el bucle?,
+pues cuando ya no queden d&#xED;gitos que sumar, o lo que es lo mismo, cuando n div 10 sea
+igual a 0. Ahora ya tenemos todo lo necesario para implementar nuestra soluci&#xF3;n:</p>
+<pre><code>fun sumaDigitos(n, a):
+    if n == 0 then return a
+    else
+        return sumaDigitos(n div 10, a + n mod 10)
+    end
+end
+</code></pre><p><strong>Ejercicio</strong>: <br>
+Usando programaci&#xF3;n invariante escribe una funci&#xF3;n que tome un entero y retorne
+el n&#xFA;mero que se obtiene al invertir sus d&#xED;gitos
+(Ej. 1234 =&gt; 4321 - No tomes en cuenta enteros con ceros).</p>
+<p><strong>Ejercicio</strong>:<br>
+Usando programaci&#xF3;n invariante escribe una funci&#xF3;n que tome un entero positivo
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>&gt;</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n &gt;= 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mrel">&gt;</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span>, y retorne un booleano determinando si es o no un n&#xFA;mero primo.
+La funci&#xF3;n debe tomar s&#xF3;lo un argumento.</p>
+<p>Pista: puedes definir una funci&#xF3;n dentro de otra (composici&#xF3;n de funciones).</p>
+<p><strong>Ejercicio</strong>:<br>
+Reescribe las soluciones anteriores de modo que tomen un s&#xF3;lo argumento.</p>
+<h3 id="conclusiones">Conclusiones</h3>
+<p>Hemos sido capaces de resolver dos problemas, el c&#xE1;lculo de un factorial y la suma de
+los d&#xED;gitos de un n&#xFA;mero, de dos maneras distintas: implementando directamente
+una definici&#xF3;n matem&#xE1;tica sencilla del problema, y otra aplicando la t&#xE9;cnica de
+la programaci&#xF3;n invariante. Hemos tambi&#xE9;n comprendido que esta &#xFA;ltima t&#xE9;cnica proporciona
+soluciones mucho m&#xE1;s eficientes que aquellas que se pueden obtener aplicando el
+primer m&#xE9;todo, pues simulan el comportamiento de un bucle y por lo tanto, hacen uso
+de un espacio de memoria constante en cada llamada recursiva (sin necesidad de emplear la pila).
+Adicionalmente, hemos aprendido a reconocer las propiedades fundamentales de
+las soluciones con programaci&#xF3;n invariante, que proporcionan esta ventaja:
+el uso de un <em>acumulador</em>, y un dise&#xF1;o de la recursi&#xF3;n llamado <em>recursividad por cola</em>, en
+el cual la llamada recursiva es la &#xFA;ltima operaci&#xF3;n de la funci&#xF3;n - no hay necesidad
+de regresar a una llamada anterior. A continuaci&#xF3;n se puede observar una
+muestra de la diferencia entre la ejecuci&#xF3;n de ambos tipos de soluciones:</p>
+<pre><code>  //c&#xE1;lculo de 5!
+  sin recursividad por cola
+  5*fact(4)
+  5*(4*fact(3))
+  5*(4*(3*fact(2)))
+  5*(4*(3*(2*fact(1))))
+  5*(4*(3*(2*1)))
+
+ //Las operaciones no se ejecutan hasta llegar a este punto
+ //Todas las operaciones parciales se van acumulando en la pila
+
+  5*4*3*2
+  5*4*6
+  ...
+
+
+  usando recursividad por cola
+  fact(4, 5*4)
+  fact(3, 20*3)
+  fact(2, 60*2)
+  fact(1, 120*1)
+  =&gt;120  //En este caso no hay un uso incremental de la pila
+         //Las operaciones se resuelven en cada llamada
+        //=&gt; por lo tanto, el uso de memoria es constante
+</code></pre><p>Para finalizar, cabe destacar que el uso de la <em>recursividad por cola</em> es &#xAB;la
+manera&#xBB; de implementar bucles en el paradigma funcional. En este paradigma
+no existen constructos tales como <code>while</code> o <code>for</code>. Sin embargo, realizando
+un comparativo ambas implementaciones mostradas a continuaci&#xF3;n son completamente
+similares:</p>
+<pre><code>fun While(S):
+  if (si S cumple condicion &#xAB;p&#xBB;) then return S
+  else
+      return While(transformar S)
+  end
+end
+</code></pre><pre><code>fun BucleWhile(S):
+  while(si S no cumple condicion &#xAB;p&#xBB;):
+    S = transformar S  //asignaci&#xF3;n m&#xFA;ltiple sobre S
+  end
+  return S
+end
+</code></pre><p>Y de hecho, gracias a esta similitud sint&#xE1;ctica podemos traducir de una
+soluci&#xF3;n a otra de forma pr&#xE1;cticamente autom&#xE1;tica. Y en ambos casos la programaci&#xF3;n
+invariante es la herramienta de dise&#xF1;o clave para la soluci&#xF3;n. Con ella podemos
+escribir bucles correctos y eficientes transversales a los paradigmas de programaci&#xF3;n.</p>
+<p><strong>resumen de lo aprendido</strong><br></p>
+<ul>
+<li>Una funci&#xF3;n recursiva es equivalente a un bucle si es una <em>recursividad por cola</em></li>
+<li>Para escribir funciones de esta forma necesitamos un <em>acumulador</em></li>
+<li>Definimos el acumulador comenzando desde una <em>invariante</em> usando el
+<em>principio de los vasos comunicantes</em></li>
+<li>Lo anterior se conoce como <em>programaci&#xF3;n invariante</em> y es la &#xFA;nica forma razonable
+de programar bucles</li>
+<li>La programaci&#xF3;n invariante es &#xFA;til en <em>todos los paradigmas de programaci&#xF3;n</em></li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../invariante/index.html" class="navigation navigation-prev " aria-label="Previous page: Recursión y programación invariante"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../invariante/invariante-real.html" class="navigation navigation-next " aria-label="Next page: Programación invariante en el mundo real"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"katex":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
