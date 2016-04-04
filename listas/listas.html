@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Listas | Introduction</title>
+        <title>Definiendo las listas | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -41,6 +41,8 @@
         
     
     
+    <link rel="next" href="../listas/aplicacion.html" />
+    
     
     <link rel="prev" href="../listas/index.html" />
     
@@ -52,10 +54,10 @@
         
     <div class="book"
         data-level="3.1"
-        data-chapter-title="Listas"
+        data-chapter-title="Definiendo las listas"
         data-filepath="listas/listas.md"
         data-basepath=".."
-        data-revision="Thu Mar 31 2016 19:18:39 GMT-0300 (CLT)"
+        data-revision="Mon Apr 04 2016 15:32:40 GMT-0300 (CLST)"
         data-innerlanguage="">
     
 
@@ -211,7 +213,73 @@
                         
                             <b>3.1.</b>
                         
-                        Listas
+                        Definiendo las listas
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="listas/aplicacion.html">
+            
+                
+                    <a href="../listas/aplicacion.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Realizando cálculos con listas
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="listas/desafio-extra.html">
+            
+                
+                    <a href="../listas/desafio-extra.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Desafío extra: aplanar una lista
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="alto-orden/index.html">
+            
+                
+                    <a href="../alto-orden/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Programación de alto orden y registros
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="alto-orden/entornos-contextuales.html">
+            
+                
+                    <a href="../alto-orden/entornos-contextuales.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Entornos contextuales
                     </a>
             
             
@@ -375,6 +443,50 @@ etc&#xE9;tera. De forma an&#xE1;loga esto no es un entero:</p>
 en base 10.</p>
 <p><strong>A tener en cuenta</strong> <br></p>
 <p>Utilizando la definici&#xF3;n dada m&#xE1;s arriba &#xBF;Es posible construir una lista circular?</p>
+<h3 id="representaciones-para-las-listas">Representaciones para las listas</h3>
+<p>La definici&#xF3;n dada anteriormente (usando EBNF) nos entrega una representaci&#xF3;n textual para
+las listas. Esta es una representaci&#xF3;n formal que nos muestra c&#xF3;mo mediante su
+propia definici&#xF3;n podemos ir construyendo listas cada vez m&#xE1;s grandes, a partir
+de otra m&#xE1;s peque&#xF1;a. Podemos tomar, por lo tanto, el lado izquierdo de esa
+definici&#xF3;n (<code>&lt;List T&gt;</code>) y ir reemplaz&#xE1;ndolo de manera repetida seg&#xFA;n la definici&#xF3;n para ir construyendo listas
+de m&#xE1;s y m&#xE1;s elementos hasta finalizar con una lista vac&#xED;a:</p>
+<pre><code>&lt;List T&gt; =&gt;
+10 | &lt;List T&gt; =&gt;
+10 | 11 | &lt;List T&gt; =&gt;
+10 | 11 | 12 | &lt;List T&gt; =&gt;
+10 | 11 | 12 | nil
+</code></pre><p>Sin embargo, los lenguajes que soportan listas generalmente no incluyen (o no incluyen
+&#xFA;nicamente) una sintaxis para construir listas de acuerdo a su definici&#xF3;n te&#xF3;rica.
+En su lugar, es com&#xFA;n la inclusi&#xF3;n de otras representaciones sint&#xE1;cticas, como
+el uso de corchetes (ej. [1, 2, 3] que ser&#xED;a id&#xE9;ntica a nuestra representaci&#xF3;n
+ formal 1|2|3|nil). El motivo es simplemente facilitar la vida
+al programador, de modo que pueda contar con una sintaxis para representar listas
+posiblemente m&#xE1;s legible o m&#xE1;s intuitiva. Pero c&#xF3;mo se ha mencionado no hay que
+confundir entre la definici&#xF3;n (formal) y su representaci&#xF3;n. Representaciones pueden
+haber muchas. Un lenguaje puede ofrecer distintas formas de expresar la misma cosa.
+Y a las diferentes representaciones sint&#xE1;cticas (fuera de la formal) que tienen
+como objetivo la comodidad del programador, se les conoce como <em>az&#xFA;car sint&#xE1;ctica</em>.
+El nombre se puede atribuir en cierto modo, a que es sintaxis que busca endulzar
+el trabajo del desarrollador. Y similar a como no es bueno comer demasiada az&#xFA;car,
+demasiada az&#xFA;car sint&#xE1;ctica no ayuda a la claridad, y puede hacer perder de vista
+la esencia de los conceptos.</p>
+<p>Otra forma de representar las listas es de forma gr&#xE1;fica. Esta forma, por supuesto,
+tiene como fin ayudar al programador a razonar sobre las listas de forma abstracta
+fuera del programa (los humanos tenemos habilidades de razonamiento visual muy
+  poderosas). En esta representaci&#xF3;n la lista se puede dibujar como un grafo
+con v&#xE9;rtices y aristas como el que se muestra a continuaci&#xF3;n para la lista
+de nuestro ejemplo m&#xE1;s arriba:</p>
+<p><img src="img/representacion-lista.png" alt=""></p>
+<p>La forma de construir el grafo es la siguiente: Comenzamos nuevamente desde
+la representaci&#xF3;n m&#xE1;s a la izquierda, en este caso, 10 | <List Int="">, y dibujamos
+tres nodos. Un nodo con una barra vertical, otro con el n&#xFA;mero diez, y otro que
+representa a la otra lista <List Int="">, que posteriormente se reemplaza repetidamente
+por otros tres nodos hasta construir el diagrama completo de la imagen. Nota que
+el grafo es dirigido. Se indica una direcci&#xF3;n especifica hacia los nodos que
+representa como la lista se ha construido paso a paso. Adem&#xE1;s, nota que, en este caso,
+el grafo que nos resulta es un caso especial para la estructura de un grafo que se conoce
+como un <em>&#xE1;rbol</em>. Los &#xE1;rboles de hecho son, a continuaci&#xF3;n de las listas, la estructura
+de dato m&#xE1;s importante en las ciencias de la computaci&#xF3;n.</List></List></p>
 
                     
                     </section>
@@ -385,8 +497,10 @@ en base 10.</p>
         </div>
 
         
-        <a href="../listas/index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Listas y correspondencia de patrones"><i class="fa fa-angle-left"></i></a>
+        <a href="../listas/index.html" class="navigation navigation-prev " aria-label="Previous page: Listas y correspondencia de patrones"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../listas/aplicacion.html" class="navigation navigation-next " aria-label="Next page: Realizando cálculos con listas"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

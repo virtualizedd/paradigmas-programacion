@@ -1,0 +1,678 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Realizando cálculos con listas | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../listas/desafio-extra.html" />
+    
+    
+    <link rel="prev" href="../listas/listas.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3.2"
+        data-chapter-title="Realizando cálculos con listas"
+        data-filepath="listas/aplicacion.md"
+        data-basepath=".."
+        data-revision="Mon Apr 04 2016 15:32:40 GMT-0300 (CLST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="intro/index.html">
+            
+                
+                    <a href="../intro/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Introducción
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="intro/declarativa.html">
+            
+                
+                    <a href="../intro/declarativa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        La programación declarativa
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="intro/funcional.html">
+            
+                
+                    <a href="../intro/funcional.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Definiendo el paradigma funcional
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="invariante/index.html">
+            
+                
+                    <a href="../invariante/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Recursión y programación invariante
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="invariante/fundamentos.html">
+            
+                
+                    <a href="../invariante/fundamentos.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Programación invariante: fundamentos
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="invariante/invariante-real.html">
+            
+                
+                    <a href="../invariante/invariante-real.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Programación invariante en el mundo real
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="listas/index.html">
+            
+                
+                    <a href="../listas/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Listas y correspondencia de patrones
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="listas/listas.html">
+            
+                
+                    <a href="../listas/listas.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Definiendo las listas
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2" data-path="listas/aplicacion.html">
+            
+                
+                    <a href="../listas/aplicacion.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Realizando cálculos con listas
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="listas/desafio-extra.html">
+            
+                
+                    <a href="../listas/desafio-extra.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Desafío extra: aplanar una lista
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="alto-orden/index.html">
+            
+                
+                    <a href="../alto-orden/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Programación de alto orden y registros
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="alto-orden/entornos-contextuales.html">
+            
+                
+                    <a href="../alto-orden/entornos-contextuales.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Entornos contextuales
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Introduction</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="realizando-c&#xE1;lculos-con-listas">Realizando c&#xE1;lculos con listas</h1>
+<p>Ahora que ya sabemos qu&#xE9; son las listas y c&#xF3;mo se representan, podemos pasar
+al tema de c&#xF3;mo trabajar con ellas, en espec&#xED;fico, c&#xF3;mo realizar c&#xE1;lculos
+con ellas. Pero antes de ir a ello, repasemos c&#xF3;mo construir una lista, pero esta
+vez desde una perspectiva &#xAB;m&#xE1;s program&#xE1;tica&#xBB;, pues si vamos a trabajar con listas
+esto es lo primero que debemos saber, c&#xF3;mo construirlas pieza por pieza.</p>
+<p>Bueno, una lista es un valor como cualquier otro (de tipo &#xAB;lista&#xBB;, por supuesto),
+de modo que podemos sin ning&#xFA;n problema asociarlas a una variable. Entendido esto,
+podemos empezar, por lo tanto, declarando un identificador X1 para que represente
+a nuestra lista, y luego asignar a este identificador una representaci&#xF3;n textual
+de la lista que queremos que represente. Aunque, espera!, si basamos nuestra representaci&#xF3;n seg&#xFA;n
+la definici&#xF3;n formal (pues la idea es construir la lista pieza por pieza), le podemos asignar una lista vac&#xED;a (cosa que no queremos ahora), o un elemento seguido de otra lista. Con el elemento no hay problema, pero &#xBF;Y la otra lista?.
+Cierto, vamos a tener que declarar otro identificador adicional para que represente a esa
+&#xAB;otra lista&#xBB;. Con eso, ya podemos definir nuestra primera pieza tal como se muestra
+a continuaci&#xF3;n:</p>
+<pre><code>declarar X1, X2
+X1 = 10 | X2
+</code></pre><p>Ya con este primer paso, lo que sigue no es dif&#xED;cil. Ahora para extender esa lista
+debemos asignar una nueva lista a <code>X2</code>. Para ello, declaramos una nueva variable
+<code>X3</code>, y la utilizamos para representar la lista asociada a la definici&#xF3;n de lista de
+<code>X2</code>.</p>
+<pre><code>declarar X3
+X2 = 11 | X3
+</code></pre><p>Nota que s&#xF3;lo declaramos <code>X3</code>, si volvemos a declarar a <code>X2</code>, entonces ya no har&#xE1; referencia
+a la misma variable que declaramos antes. Nota tambi&#xE9;n, que considerando que a&#xFA;n estamos
+en paradigma funcional, las variables siguen siendo de asignaci&#xF3;n &#xFA;nica. Puedo declarar una variable,
+y luego asignarle un valor mucho despu&#xE9;s, pero s&#xF3;lo una vez. Bien, a continuaci&#xF3;n, dependiendo
+la cantidad de elementos que queramos incluir en la lista el paso anterior se repite una y otra vez.
+Se declara un identificador para que represente a una nueva lista a incluir en la siguiente definici&#xF3;n, y
+luego se asigna esa definici&#xF3;n a la variable anterior que quedaba sin asignar. Cuando ya estemos
+listos con nuestra lista, para finalizar simplemente asignamos una lista vac&#xED;a a la &#xFA;ltima variable
+sin asignar.</p>
+<pre><code>X3 = nil
+</code></pre><p>Con esto, ya tenemos nuestra lista construida paso por paso.</p>
+<p><strong>Nota</strong>: Por supuesto, hubiera sido m&#xE1;s r&#xE1;pido haberla definido como 10|11|nil, pero
+la idea era entender la construcci&#xF3;n pieza por pieza seg&#xFA;n la definici&#xF3;n. Adicionalmente,
+tambi&#xE9;n se podr&#xED;a haber definido alguna otra sintaxis que ofreciera el lenguaje (algun az&#xFA;car sint&#xE1;ctico para las listas)
+como podr&#xED;a ser [10, 11].</p>
+<p><strong>Nota2</strong>: En esta construcci&#xF3;n con pseudoc&#xF3;digo hemos asumido la existencia de un operador | que
+significa &#xAB;un elemento seguido de otro (o de una lista)&#xBB;, para as&#xED; seguir su definici&#xF3;n te&#xF3;rica.
+ Sin embargo, no todos los lenguajes incluyen necesariamente una sintaxis para representar esta idea,
+ y muchas veces se limitan (si es que soportan las listas) a alg&#xFA;n az&#xFA;car sint&#xE1;ctico como [1, 2, 3]
+ para representarlas, que deja oculta su definici&#xF3;n te&#xF3;rica. O tambi&#xE9;n se puede dar el caso
+ que lo que en ese lenguaje llamen listas sea algo completamente distinto a la idea aqu&#xED; expresada,
+ en el sentido que su implementaci&#xF3;n siga una l&#xF3;gica completamente distinta (ejemplo, las listas
+   en Python).</p>
+<p><strong>Nota3</strong>: En muchos lenguajes que soportan esta sintaxis, a la parte izquierda de la definici&#xF3;n
+(al elemento) se le llama la &#xAB;cabeza de la lista&#xBB; (o en LISP, usualmente como car), y a la
+parte derecha (a la otra lista) como la &#xAB;cola de la lista&#xBB; (En LISP, usualmente como cdr).</p>
+<h3 id="sumando-los-elementos-de-una-lista-num&#xE9;rica">Sumando los elementos de una lista num&#xE9;rica</h3>
+<p>Bien, es momento de revisar c&#xF3;mo recorrer una lista, y por consiguiente, c&#xF3;mo definir
+funciones recursivas con el fin de realizar c&#xE1;lculos con listas. Para lo que sigue, a&#xF1;adiremos
+a nuestro pseudoc&#xF3;digo dos nuevas funcionalidades m&#xE1;s, .head y .tail, para obtener
+el encabezado y la cola de una lista, respectivamente. Estas funcionalidades, en realidad,
+vienen incluidas en la mayor&#xED;a (por no decir todos) los lenguajes que incluyen soporte
+preconstruido para listas basadas en la definici&#xF3;n que hemos dado. De no incluirlas,
+s&#xF3;lo podr&#xED;amos construir listas, pero no contar&#xED;amos con ning&#xFA;n medio de acceso para las
+listas ya construidas. No podr&#xED;amos recorrerlas. Bien, como primer ejemplo consideremos
+una funci&#xF3;n que sume todos los n&#xFA;meros incluidos en una lista. &#xBF;C&#xF3;mo lo hacemos?. Bueno,
+debemos pasar la lista como argumento por supuesto. Pero &#xBF;C&#xF3;mo calculamos la suma?.
+En realidad, hay una forma que no es complicada de deducir. Si nos dirigimos a la definici&#xF3;n de
+lista podemos vemos que una, siempre que no est&#xE9; vac&#xED;a, no es m&#xE1;s que &#xAB;un elemento seguido de otra lista&#xBB;.
+Es decir, bas&#xE1;ndonos en esa definici&#xF3;n, podr&#xED;amos decir que la suma de los elementos de una lista no es m&#xE1;s que
+&#xAB;la suma de un elemento m&#xE1;s la suma de los elementos de la otra lista&#xBB;!. Y sabiendo
+que podemos acceder al elemento con L.head, y a la otra lista con L.tail, y considerando
+que la &#xAB;otra lista&#xBB; se ir&#xE1; reduciendo cada vez m&#xE1;s hasta llegar a una lista vac&#xED;a, podemos
+implementar lo anterior de forma pr&#xE1;cticamente literal haciendo uso de una recursi&#xF3;n!
+El siguiente c&#xF3;digo da muestra de ello:</p>
+<pre><code>fun Suma(Lista):
+  if(Lista == nil) return 0
+  else
+    return Lista.head + Suma(Lista.tail)
+  end
+end
+</code></pre><p>Vale la pena resaltar como llegamos a nuestra soluci&#xF3;n simplemente siguiendo la
+estructura recursiva de las listas dada por su definici&#xF3;n. Esta es una visi&#xF3;n
+muy importante. Es muestra de c&#xF3;mo los tipos de datos recursivos y las funciones recursivas
+se ajustan entre ellos muy bien. Ahora, sin embargo, a&#xFA;n tenemos un problema. Hemos
+encontrado una soluci&#xF3;n, pero no la mejor. No utiliza la <em>recusividad por cola</em> a
+la que tanta atenci&#xF3;n y &#xE9;nfasis le dimos en la secci&#xF3;n anterior. Arreglemos eso.
+Definamos una invariante para esta situaci&#xF3;n. En este caso, dado que el acumulador
+debe ir recolectando la suma de cada uno de los encabezados, uno por uno, la otra
+parte debe ser lo que a&#xFA;n queda sin sumar. As&#xED; que bueno, ah&#xED; tenemos a nuestra
+invariante. No fue muy complicado de encontrar la verdad. En este caso, tambi&#xE9;n podr&#xED;amos
+decir que fue siguiendo la definici&#xF3;n. Bien, entonces tendr&#xED;amos que:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">(</mi><mi mathvariant="normal">L</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">)</mi><mtext>&#xA0;</mtext></mtext><mo>=</mo><mo>(</mo><msub><mi>h</mi><mn>1</mn></msub><mo>+</mo><msub><mi>h</mi><mn>2</mn></msub><mo>+</mo><mo>&#x2026;</mo><mo>+</mo><msub><mi>h</mi><mi>i</mi></msub><mo>)</mo><mo>+</mo><msub><mtext><mtext>&#xA0;</mtext><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">(</mi><mi mathvariant="normal">L</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi></mtext><mi>i</mi></msub><mtext><mi mathvariant="normal">.</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">)</mi></mtext></mrow><annotation encoding="application/x-tex">
+\text{suma(Lista) } = (h_1 + h_2 + \ldots + h_i) + \text{ suma(Lista}_i\text{.tail)}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.05em;vertical-align:-0.3em;"></span><span class="base displaystyle textstyle uncramped"><span class="text mord displaystyle textstyle uncramped"><span class="mord mathrm">s</span><span class="mord mathrm">u</span><span class="mord mathrm">m</span><span class="mord mathrm">a</span><span class="mord mathrm">(</span><span class="mord mathrm">L</span><span class="mord mathrm">i</span><span class="mord mathrm">s</span><span class="mord mathrm">t</span><span class="mord mathrm">a</span><span class="mord mathrm">)</span><span class="mord mspace">&#xA0;</span></span><span class="mrel">=</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">h</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mbin">+</span><span class="mord"><span class="mord mathit">h</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mbin">+</span><span class="minner">&#x2026;</span><span class="mbin">+</span><span class="mord"><span class="mord mathit">h</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose">)</span><span class="mbin">+</span><span class="mord"><span class="text mord displaystyle textstyle uncramped"><span class="mord mspace">&#xA0;</span><span class="mord mathrm">s</span><span class="mord mathrm">u</span><span class="mord mathrm">m</span><span class="mord mathrm">a</span><span class="mord mathrm">(</span><span class="mord mathrm">L</span><span class="mord mathrm">i</span><span class="mord mathrm">s</span><span class="mord mathrm">t</span><span class="mord mathrm">a</span></span><span class="vlist"><span style="top:0.3em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="text mord displaystyle textstyle uncramped"><span class="mord mathrm">.</span><span class="mord mathrm">t</span><span class="mord mathrm">a</span><span class="mord mathrm">i</span><span class="mord mathrm">l</span><span class="mord mathrm">)</span></span></span></span></span></span></p>
+<p>Es decir, que la suma de los elementos de una lista es igual a la suma de una serie de
+encabezados m&#xE1;s la suma de la cola que le corresponde al &#xFA;ltimo encabezado, donde por cierto,
+la suma de los encabezados es nuestro acumulador. As&#xED; que, en definitiva, vamos llamando
+recursivamente colas de listas, al mismo tiempo que vamos sumando el encabezado al acumulador,
+hasta que la cola de una lista sea una lista vac&#xED;a. El c&#xF3;digo implementando esta idea
+se puede ver a continuaci&#xF3;n:</p>
+<pre><code>fun Suma(Lista):
+  fun SumaInvariante(Lista, A):
+      if Lista == nil then return A
+      else
+        return SumaInvariante(Lista.tail, A + Lista.head)
+      end
+  end
+
+  return SumaInvariante(Lista, 0)
+end
+</code></pre><p>Con eso ya tenemos una soluci&#xF3;n eficiente que sigue los principios que aprendimos
+la secci&#xF3;n anterior.</p>
+<h3 id="obteniendo-el-n&#xE9;simo-elemento-de-una-lista">Obteniendo el n-&#xE9;simo elemento de una lista</h3>
+<p>Resolvamos ahora otro problema de un tipo completamente
+distinto. Escribamos una funci&#xF3;n que nos retorne el n-&#xE9;simo elemento de una lista.
+Nota que una lista se define como un elemento seguido de una lista, y as&#xED; en adelante.
+No contamos con un acceso directo a cada uno de los elementos. El &#xFA;nico modo que podemos
+hacerlo es recorriendo la lista de forma recursiva hasta encontrar al n-&#xE9;simo elemento
+en cuesti&#xF3;n, y por lo tanto, esta funcionalidad es bastante &#xFA;til en realidad. Bien, Escribamos
+la funci&#xF3;n. Para ello, podemos releer la descripci&#xF3;n que dimos del problema (&#xAB;recorrer de forma recursiva hasta encontrar
+el n-&#xE9;simo elemento&#xBB;) haciendo uso de la definici&#xF3;n de lista. Una lista, como ya sabemos,
+esta compuesta de dos partes (si no est&#xE1; vac&#xED;a): un encabezado y una cola. En otras palabras, el resultado
+que buscamos no es otro que el encabezado de la cola de la cola de la cola ... de nuestra lista original.
+Con esta perspectiva en mente, ya podemos escribir la funci&#xF3;n que buscamos. Simplemente debemos ir
+reduciendo el valor de <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span>, al mismo tiempo que en cada llamada recursiva accedemos a una cola tras otra,
+hasta que <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> sea igual a 1, y entonces el encabezado de esa lista en particular corresponda al elemento que
+buscamos. En el siguiente c&#xF3;digo se puede ver una implementaci&#xF3;n de lo anterior:</p>
+<pre><code>fun ObtenerElemento(Lista, n):
+  if n == 1 then return Lista.head
+  else
+    return ObtenerElemento(Lista.tail, n - 1)
+  end
+end
+</code></pre><p>Nota que en este caso la soluci&#xF3;n a la que hemos llegado ya utiliza <em>recursividad por cola</em>.
+Nota adem&#xE1;s que a diferencia de los problemas anteriores, en este no hay necesidad de un acumulador,
+pues resulta que no estamos realizando ningun c&#xE1;lculo que signifique ir acumulando un resultado a partir
+de una colecci&#xF3;n de elementos. En su lugar, aqu&#xED; simplemente realizamos tantas iteraciones como sean
+necesarias hasta dar con una situaci&#xF3;n en particular (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n == 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mrel">=</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span> en este caso). Podr&#xED;amos, por lo tanto,
+preguntarnos &#xBF;Cu&#xE1;l es la invariante en este caso?. Pues resulta, que a diferencia de las f&#xF3;rmulas
+anteriores, para este tipo de casos podemos definir una invariante con una simple proposici&#xF3;n como esta:</p>
+<pre><code>El elemento n-&#xE9;simo de una lista es igual al encabezado de la (n-1)-&#xE9;sima cola
+</code></pre><p><strong>Para tomar en cuenta</strong>: <br>
+&#xBF;Qu&#xE9; sucede si se pasa a la funci&#xF3;n un valor mayor a la cantidad de elementos en la lista como
+argumento <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span>?</p>
+<p><strong>Ejercicio</strong> <br>
+Escribe una funci&#xF3;n (empleando programaci&#xF3;n invariante) que tome como argumento un entero <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> y
+retorne una lista con todos los factoriales de 1 a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span>. (Ej 5 =&gt; [1!, 2!, 3!, 4!, 5!])</p>
+<p><strong>Ejercicio</strong> <br>
+La concatenaci&#xF3;n es una tarea frecuente a la hora de trabajar con varias listas. Esta consiste en
+construir una nueva lista a partir de la uni&#xF3;n de todos los elementos de dos listas distintas.
+Por ejemplo, al concatenar [1, 2, 3] y [4, 5, 7] se genera la lista [1, 2, 3, 4, 5, 7] (Nota que el
+  orden de los elementos en la lista resultante depende del orden en que se realiza la operaci&#xF3;n.
+  Si la concatenaci&#xF3;n fuera entre [4, 5, 7] y [1, 2, 3] el resultado ser&#xED;a [4, 5, 7, 1, 2, 3]).
+Escribe una funci&#xF3;n que tome como argumento dos listas, y retorne la concatenaci&#xF3;n de las dos (considerando
+  la lista del primer argumento, como la primera lista de la operaci&#xF3;n).</p>
+<h3 id="coincidencia-de-patrones">Coincidencia de patrones</h3>
+<p>Cuando estamos ante una lista, al mismo tiempo estamos ante un patr&#xF3;n. Por supuesto, aunque una lista
+es una estructura de dato que vive en la memoria, el patr&#xF3;n no existe en la memoria, sino que en nuestra
+definici&#xF3;n abstracta y en nuestra representaci&#xF3;n visual. En este caso, el patr&#xF3;n es que una lista est&#xE1;
+compuesta de un encabezado y una cola (a menos que est&#xE9; vac&#xED;a). Y es bas&#xE1;ndose en esta propiedad que muchos lenguajes de programaci&#xF3;n simb&#xF3;lica incluyen soporte a algo que se conoce como &#xAB;coincidencia de patrones&#xBB; (o b&#xFA;squeda de  patrones). Una operaci&#xF3;n especial con la cual se puede descomponer una estructura
+de dato en distintas partes seg&#xFA;n un patr&#xF3;n establecido. Por ejemplo, una lista L, se podr&#xED;a descomponer
+en su encabezado y cola si indicamos el patr&#xF3;n E|C (el nombre de las variables puede ser arbitrario). O si
+fuera una lista de tres o m&#xE1;s elementos, se podr&#xED;a descomponer en sus dos primeros elementos, y la cola que corresponde al &#xFA;ltimo de ellos, indicando el patr&#xF3;n E1|E2|C. Nota que si la lista estuviera vac&#xED;a, no coincidir&#xED;a con ninguno de los patrones dados anteriormente. Bien, esta operaci&#xF3;n es bastante poderosa la
+verdad, ya que nos permite pensar en la descomposici&#xF3;n de una estructura en las sucesivas llamadas recursivas
+de una forma mucho m&#xE1;s visual. Incluyam&#xF3;sla por tanto a nuestro pseudoc&#xF3;digo. Cada lenguaje puede ofrecer
+una sintaxis muy diferente para esta operaci&#xF3;n (a&#xFA;n cuando la l&#xF3;gica es la misma). Para nuestro caso definiremos
+la siguiente sintaxis para representar esta operaci&#xF3;n:</p>
+<pre><code>case L:
+  if Patron1
+      //[Instrucciones]
+  elseif Patron2
+      //[Instrucciones]
+  ...
+  else
+     //[Instrucciones]
+end
+</code></pre><p>Donde L representa a la variable vinculada a la estructura, que luego &#xAB;de alguna manera&#xBB;(pues hay que
+recordar que el patr&#xF3;n no existe en la memoria) se va comparando con la forma de distintos patrones hasta
+encontrar uno (si lo hay) con el que coincida, para proceder a descomponerla en distintas variables locales
+seg&#xFA;n lo indicado en el patr&#xF3;n. Nota que la estructura ser&#xE1; dividida seg&#xFA;n el primer patr&#xF3;n con el que coincida
+(en este sentido, opera igual que un condicional if), y que por lo tanto, hay que tener cuidado al definir
+nuestros patrones, pues si un patr&#xF3;n cubre todos los casos de un patr&#xF3;n que va en un elseif posterior, este
+&#xFA;ltimo patr&#xF3;n nunca se ejecutar&#xE1;. En lo ideal, los patrones deber&#xED;an ser independientes unos de otros, de ese modo a&#xFA;n cuando se cambien de ubicaci&#xF3;n los patrones, el programa seguir&#xE1; funcionando correctamente.</p>
+<p>Una vez que contamos con una sintaxis para representar la descomposici&#xF3;n de una estructura de acuerdo a un
+patr&#xF3;n, podemos reescribir todas las funciones que iban descomponiendo a las listas dentro de las llamadas
+recursivas usando esta nueva sintaxis, como se muestra a continuaci&#xF3;n con la funci&#xF3;n para sumar todos los elementos de una lista.</p>
+<pre><code>fun SumaInvariante(Lista, A):
+  case L:
+    if E|C
+      return sumaInvariante(C, A+E)
+    elseif nil:
+      return A
+  end
+end
+</code></pre><p><strong>Nota</strong>:
+Este constructo aunque se incluye en la mayor&#xED;a de lenguajes simb&#xF3;licos dise&#xF1;ados en base al paradigma
+funcional, no forma parte de la definici&#xF3;n del estilo funcional.</p>
+<p><strong>Nota2</strong>:
+Nota adem&#xE1;s que este constructo no entrega nada nuevo desde el punto de vista de los problemas que se pueden
+resolver(pues podemos resolverlos usando recursiones y las propiedades head y tail de la estructura). Sin embargo, entrega una sintaxis con la que podemos pensar la descomposici&#xF3;n de estructuras de forma m&#xE1;s visual, que puede ser de gran ayuda al momento de reflexionar sobre la soluci&#xF3;n a un problema. En ese sentido, es una
+ayuda adicional al programador.</p>
+<h3 id="funciones-que-crean-listas">Funciones que crean listas</h3>
+<p>Hasta ahora ya sabemos c&#xF3;mo escribir funciones que tomen como argumento una lista y luego de una serie de c&#xE1;lculos retorne alg&#xFA;n valor de tipo simple como salida. Ahora vayamos m&#xE1;s all&#xE1;. Revisemos la construcci&#xF3;n de funciones que retornen un tipo de dato compuesto, en espec&#xED;fico, que nos retornen listas. En realidad, no es algo complicado. S&#xF3;lo hace falta utilizar la recursividad al igual que antes (&#xF3; tambi&#xE9;n como ayuda adicional la operaci&#xF3;n para descomponer la lista seg&#xFA;n un patr&#xF3;n). Y de hecho, la misma <em>recursividad por cola</em>. Se aclara esto, pues podr&#xED;as pensar ingenuamente que es imposible, pues la lista se va construyendo despu&#xE9;s de cada llamada recursiva. Pero, en realidad, como ya demostraremos, la construcci&#xF3;n de la lista se realiza antes de cada llamada recursiva, y no despu&#xE9;s. De modo que la <em>recursividad por cola</em> tambi&#xE9;n es posible. Bien, resolvamos un problema para ejemplificar el procedimiento. Considera el problema de concatenar dos listas. Escribamos una funci&#xF3;n que realice eso (en muchos lenguajes a esta funcionalidad se la conoce como append()).
+Esta es la especificaci&#xF3;n de lo que buscamos conseguir:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mn>1</mn></msub><mo>=</mo><mo>[</mo><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>&#x2026;</mo><mo separator="true">,</mo><msub><mi>a</mi><mi>n</mi></msub><mo>]</mo></mrow><annotation encoding="application/x-tex">
+l_1 = [a_1, a_2, \ldots, a_n]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.01968em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mopen">[</span><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="minner">&#x2026;</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose">]</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mn>2</mn></msub><mo>=</mo><mo>[</mo><msub><mi>b</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>b</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>&#x2026;</mo><mo separator="true">,</mo><msub><mi>b</mi><mi>k</mi></msub><mo>]</mo></mrow><annotation encoding="application/x-tex">
+l_2 = [b_1, b_2, \ldots, b_k]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.01968em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mrel">=</span><span class="mopen">[</span><span class="mord"><span class="mord mathit">b</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">b</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="minner">&#x2026;</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">b</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose">]</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext><mi mathvariant="normal">c</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mtext><mo>(</mo><msub><mi>l</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>l</mi><mn>2</mn></msub><mo>)</mo><mo>=</mo><mo>[</mo><msub><mi>a</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>a</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>&#x2026;</mo><mo separator="true">,</mo><msub><mi>a</mi><mi>n</mi></msub><mo separator="true">,</mo><msub><mi>b</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>b</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>&#x2026;</mo><mo separator="true">,</mo><msub><mi>b</mi><mi>k</mi></msub><mo>]</mo></mrow><annotation encoding="application/x-tex">
+\text{concatenar}(l_1, l_2) = [a_1, a_2, \ldots, a_n, b_1, b_2, \ldots, b_k]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base displaystyle textstyle uncramped"><span class="text mord displaystyle textstyle uncramped"><span class="mord mathrm">c</span><span class="mord mathrm">o</span><span class="mord mathrm">n</span><span class="mord mathrm">c</span><span class="mord mathrm">a</span><span class="mord mathrm">t</span><span class="mord mathrm">e</span><span class="mord mathrm">n</span><span class="mord mathrm">a</span><span class="mord mathrm">r</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.01968em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.01968em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose">)</span><span class="mrel">=</span><span class="mopen">[</span><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="minner">&#x2026;</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">a</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">b</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">b</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mpunct">,</span><span class="minner">&#x2026;</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit">b</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose">]</span></span></span></span></span></p>
+<p>Es decir, una funci&#xF3;n que cree una nueva lista a partir de la uni&#xF3;n de todos los
+elementos de otras dos listas. Por supuesto, si la primera lista (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">l_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.01968em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span>) est&#xE1;
+vac&#xED;a, entonces el resultado consta simplemente de los elementos presentes en <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">l_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.01968em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span>,
+o dicho de otro modo, el resultado es derechamente una copia de la lista <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">l_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.01968em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span>.
+Pero si la primera lista contiene al menos un elemento, entonces lo que se necesita hacer
+es asignar a la cola del ultimo elemento de la primera lista, la segunda lista en cuesti&#xF3;n.
+&#xBF;C&#xF3;mo hacemos esto? Bueno, si la primera lista consistiera exactamente de un elemento
+podriamos escribir simplemente que <code>l1.tail = l2</code>, o usando la sintaxis para la coincidencia de
+patrones, tambi&#xE9;n podr&#xED;amos escribir que:</p>
+<pre><code>case l1:
+  of E|C
+    C = l2
+</code></pre><p>&#xBF;Pero qu&#xE9; suceder&#xED;a si la primera lista tuviera dos o m&#xE1;s elementos? Bueno, en ese caso, lo que
+buscamos se podr&#xED;a ver desde la siguiente perspectiva: necesitamos definir una lista cuyo encabezado sea
+el encabezado de la primera lista y cuya cola sea la concatenaci&#xF3;n entre la cola de la primera lista y la
+segunda lista!. De hecho, en esa afirmaci&#xF3;n tenemos una invariante, pues lo anterior siempre ser&#xE1; cierto!
+La concatenaci&#xF3;n entre dos listas ser&#xE1; una lista formada por el encabezado de la primera como su elemento y
+la concatencaci&#xF3;n entre la cola de la primera lista y la segunda. Y esta forma de ver el problema es clave, pues nos muestra como podemos implementar una soluci&#xF3;n recursiva directamente desde su misma definici&#xF3;n tal como lo
+hemos hecho con muchos otros problemas anteriores. Finalmente, a continuaci&#xF3;n se muestra una implementaci&#xF3;n de
+esa soluci&#xF3;n:</p>
+<pre><code>fun concatenar(l1, l2):
+  case l1:
+    of nil
+      return l2
+    elseif E|C
+      return E|concatenar(C, l2)
+  end
+end
+</code></pre><p>Bien, como puedes ver, no era algo complicado. Podr&#xED;amos decir, que de cierto modo, se pueden implementar funciones que retornen listas pr&#xE1;cticamente del mismo modo que implementamos funciones que retornen otros tipos simples. Y esta soluci&#xF3;n es un gran ejemplo de ello. Aunque a&#xFA;n nos queda un detalle. Esta funci&#xF3;n parece no emplear recursividad por cola. A simple vista, uno podr&#xED;a decir que necesitamos que primero se resuelva una llamada recursiva determinada para poder realizar una operaci&#xF3;n E|C. Sin embargo, cuando empezamos a abordar el tema de construir funciones que retornen listas, dijimos que nuestras soluciones podr&#xED;an ser recursivas por colas, a&#xFA;n cuando no lo parezcan. Y efectivamente es as&#xED;. Para demostrarlo, eso s&#xED;, haremos uso del lenguaje kernel. Traduciremos la funci&#xF3;n a lenguaje kernel y desde all&#xED; verificaremos que efectivamente la recursividad aqu&#xED; presente es por cola, y que las operaciones se realizan antes de las llamadas recursivas y no despu&#xE9;s. Bien, aunque para ir a esa demostraci&#xF3;n, antes necesitamos definir formalmente el lenguaje kernel para el paradigma funcional, as&#xED; que vamos a ello.</p>
+<h4 id="lenguaje-kernel-del-paradigma-funcional">Lenguaje Kernel del paradigma funcional</h4>
+<p>Como mencionamos al inicio del curso, el lenguaje kernel es <strong>el lenguaje nuclear m&#xE1;s simple de un paradigma de programaci&#xF3;n</strong>. Y ahora que ya contamos con los conceptos suficientes, es momento de definir al lenguaje kernel del paradigma funcional. Una vez que contemos con esta definici&#xF3;n, podremos traducir cualquier programa escrito en paradigma funcional al lenguaje kernel, cosa que nos ser&#xE1; de utilidad para analizar al programa desde esa traducci&#xF3;n con el objetivo de demostrar y descubrir sus propiedades. De momento, adicionalmente podemos a&#xF1;adir que el lenguaje kernel es, en realidad, la <em>primera parte (de dos) de la sem&#xE1;ntica formal</em> de un lenguaje de programaci&#xF3;n. Es decir, que en cierto sentido, compone la mitad de la definici&#xF3;n de su sem&#xE1;ntica!. La segunda parte es la <em>m&#xE1;quina abstracta</em> que introduciremos en lecciones posteriores, pero que en modo resumido es un mecanismo matem&#xE1;tico que nos permite mostrar la ejecuci&#xF3;n de un programa de forma abstracta. Con la primera parte (el lenguaje kernel), en cambio, tenemos una representaci&#xF3;n significativa de cada una de las piezas con las que se puede programar (pero no - en un sentido formal - que sucede cuando se ejecuta un programa escrito con esas piezas). Dicho esto, ya podemos presentar esta primera parte y obtener algunas ventajas y comprensiones extras a partir de este. He aqu&#xED; la definici&#xF3;n formal de nuestro lenguaje kernel para el paradigma funcional:</p>
+<pre><code>&lt;s&gt; :: = skip
+        | &lt;s&gt;1 &lt;s&gt;2
+        | declare &lt;x&gt;
+        | &lt;x&gt;1 = &lt;x&gt;2
+        | &lt;x&gt; = &lt;v&gt;
+        | if &lt;x&gt; then &lt;s&gt;1 else &lt;s&gt;2 end
+        | proc&lt;x&gt; (&lt;x&gt;1 ... &lt;x&gt;n) &lt;s&gt; end
+        | &lt;x&gt;(&lt;y&gt;1 ... &lt;y&gt;n)
+        | case &lt;x&gt; of &lt;pattern&gt; then &lt;s&gt;1 else &lt;s&gt;2 end
+
+
+&lt;v&gt; :: = &lt;number&gt; | &lt;list&gt; | ...
+
+&lt;number&gt; ::= &lt;int&gt; | &lt;float&gt;
+
+&lt;list&gt;, &lt;pattern&gt; ::= nil | &lt;x&gt; | &lt;x&gt; &apos;|&apos; &lt;list&gt;
+</code></pre><p>En realidad esta definici&#xF3;n no est&#xE1; completa, est&#xE1; casi completa, pero no completa del todo. Faltan incluir ciertas cosas que se ver&#xE1;n en la siguiente secci&#xF3;n. De cualquier modo, a&#xFA;n incompleta puede parecer bastante confusa, aunque en cierto sentido se parece bastante a la definici&#xF3;n gramatical que antes dimos para las listas. La primera parte (dedicada a la definici&#xF3;n <s>), definen las intrucciones posibles en este lenguaje. As&#xED;, puedes ver como una instrucci&#xF3;n &#xAB;se define como&#xBB; un t&#xE9;rmino skip incluido para finalizar un programa, &#xAB;o&#xBB; (puedes ver el uso de la barra vertical nuevamente como el operador l&#xF3;gico de disyunci&#xF3;n) como una instrucci&#xF3;n junto a
+otra instrucci&#xF3;n, o como la declaraci&#xF3;n de una variable, o como la asignaci&#xF3;n de una variable a otra variable, o como la asignaci&#xF3;n de un valor a una
+variable, o como una instrucci&#xF3;n if, o como un procedimiento, o como ... espera!, eso de procedimiento no suena familiar. Bueno, un procedimiento no es m&#xE1;s que una funci&#xF3;n, que toma como argumentos n variables, y retorna (autom&#xE1;ticamente) a la &#xFA;ltima variable de la lista de argumentos cuando finaliza la instrucci&#xF3;n asociada a su definici&#xF3;n. Aclarado este punto, una instrucci&#xF3;n tambi&#xE9;n puede verse como una llamada a un procedimiento, y finalmente como instrucci&#xF3;n case (nuestra instrucci&#xF3;n para descomponer estructuras). Como conclusi&#xF3;n, podr&#xED;amos decir que una instrucci&#xF3;n no es m&#xE1;s que todas esas cosas que hemos estado usando para escribir nuestros programas (con la salvedad de la diferencia entre funci&#xF3;n y procedimiento, claro), pero definidas de manera formal usando nuestra afamada notaci&#xF3;n EBNF.</s></p>
+<p>M&#xE1;s abajo, como por supuesto nuestro lenguaje no consta s&#xF3;lo de instrucciones, tambi&#xE9;n se entregan definiciones para los valores, los n&#xFA;meros, las listas, y los patrones. En el caso de los valores &#xAB;se definen como&#xBB; un numero o una lista o otros valores que nos faltan por introducir en las lecciones siguientes. En el caso de los numeros estos pueden ser enteros o flotantes, y finalmente, se da una definici&#xF3;n para las listas y los patrones similar a la definici&#xF3;n que dimos anteriormente, con la diferencia que esta vez la definici&#xF3;n da espacio para que un patr&#xF3;n y una lista puedan estar compuestos &#xFA;nicamente de una variable.</p>
+<p>Y bueno, esa ser&#xED;a la definici&#xF3;n formal de nuestro lenguaje kernel. Una vez que se lee lo anterior, entonces se pierde gran parte, por no decir toda, esa complejidad que sugiere a primera vista. Aun nos quedan cosas que a&#xF1;adir, en especifico, otros valores como estructuras de &#xE1;rbol y grafos. Pero ya con esta definici&#xF3;n podemos hacer bastante. Ahora mismo vale la pena notar como en el lenguaje kernel todas las instrucciones se representan a trav&#xE9;s de un identificador &#xFA;nico, y que por lo tanto, es posible visualizar todos los resultados intermedios de un programa, pues cada paso, cada instrucci&#xF3;n en el lenguaje kernel se puede separar en torno a estos identificadores. Esto &#xFA;ltimo se considera un principio fundamental que subyace a todas las traducciones a lenguaje kernel que se realizan a partir del c&#xF3;digo de alg&#xFA;n programa funcional. Otra cosa que vale la pena notar es como en el lenguaje kernel todas las funciones se transforman en procedimientos con un argumento extra (el argumento dirigido a representar el valor de retorno), y que todas las expresiones que anidadas (como los bloques al interior de intrucciones if o dentro de una funci&#xF3;n) se vuelven no anidadas (se pueden definir por fuera mediante su identificador &#xFA;nico).</p>
+<p><strong>Nota</strong>: Es necesario resaltar la diferencia entre la definici&#xF3;n de <em>programaci&#xF3;n funcional</em> y la definici&#xF3;n de un lenguaje kernel para programar en estilo funcional. El lenguaje kernel, como el que hemos definido, puede incluir constructos adicionales como <code>case</code>, dirigidos a facilitar la programaci&#xF3;n. Adicionalmente, qu&#xE9; tipos de valores se soportan en el lenguaje tampoco tiene que ver con la definici&#xF3;n de <em>programaci&#xF3;n funcional</em> en s&#xED;, pero sin embargo, en un lenguaje como el kernel, es vital especificar con que valores podemos trabajar y como se definen las estructuras.</p>
+<p><strong>Nota2</strong>: Nota que la sintaxis especifica para nuestro lenguaje (las palabras claves, que signos usar) es una cuesti&#xF3;n aparte. Se podr&#xED;a definir un lenguaje kernel pr&#xE1;cticamente igual pero que en lugar de par&#xE9;ntesis para
+representar la lista de argumentos de un procedimiento, se utilice corchetes, o que en lugar de <code>if</code> la palabra clave sea <code>cuando</code>.</p>
+<h3 id="demostrando-la-recursividad-por-cola-de-la-concatenaci&#xF3;n">Demostrando la recursividad por cola de la concatenaci&#xF3;n</h3>
+<p>Bien, ahora que ya tenemos nuestro lenguaje kernel podemos realizar la demostraci&#xF3;n que coment&#xE1;bamos. Primero, realicemos la traducci&#xF3;n de nuestra funci&#xF3;n a lenguaje kernel. Esta era nuestra funci&#xF3;n:</p>
+<pre><code>fun concatenar(l1, l2):
+  case l1:
+    of nil
+      return l2
+    elseif E|C
+      return E|concatenar(C, l2)
+  end
+end
+</code></pre><p>En primer lugar <code>concatenar()</code> se vuelve un procedimiento con un argumento extra.</p>
+<pre><code>proc concatenar(l1, l2, l3)
+  ...
+</code></pre><p>Luego, para nuestra instrucci&#xF3;n <code>case</code> cada caso tiene un s&#xF3;lo patr&#xF3;n, estando dedicado el
+primer caso a comprobar si l1 es una lista vac&#xED;a:</p>
+<pre><code>proc concatenar(l1, l2, l3)
+  case l1 of nil then ...
+</code></pre><p>Luego, como en nuestro lenguaje kernel no hay un <code>return</code>, sino que un procedimiento retorna
+autom&#xE1;ticamente el valor de l3 una vez que finaliza su instrucci&#xF3;n asociada. En este caso,
+debemos asignar el valor que queremos retornar a l3.</p>
+<pre><code>proc concatenar(l1, l2, l3)
+  case l1 of nil then l3 = l2
+</code></pre><p>Luego, para incluir el siguiente caso, como no hay un <code>elseif</code> incluido en la definici&#xF3;n del lenguaje kernel,
+debemos incluir otra instrucci&#xF3;n case luego de un else del anterior. De hecho, siempre que queramos evaluar m&#xFA;ltiples patrones para un caso, siempre tendremos que hacer uso de instrucciones <code>case</code> tras otro <code>else</code> en el lenguaje kernel. Finalmente, escribimos</p>
+<pre><code>proc concatenar(l1, l2, l3)
+  case l1 of nil then l3 = l2
+  else case l1 of E|C then ...
+</code></pre><p>Ahora necesitamos traducir la instrucci&#xF3;n <code>return E|concatenar(C, l2)</code>. En este caso, hay un resultado intermedio (<code>concatenar(C, l2)</code>) que se puede expresar de forma separada ya que es una instrucci&#xF3;n v&#xE1;lida en nuestro lenguaje kernel(considerando el argumento adicional). Aparte de eso, dado que l3 es el valor que se retornar&#xE1; autom&#xE1;ticamente, debemos asignar a l3 lo que ser&#xE1; el valor de retorno, pero claro, no le podemos asignar directamente <code>E|concatenar(C, 12)</code>, debemos separar esas instrucci&#xF3;nes de alg&#xFA;n modo. Lo que podemos hacer, es definir una lista con una cola indefinida de momento(una lista cuya cola es una variable sin un valor asignado a&#xFA;n), y luego asignar esa lista a l3. Luego de esto, podemos asignar una lista concreta a esa cola indefinida usando una llamada recursiva!. Antes de todo esto, por supuesto, vamos a necesitar declarar una variable que haga el papel de cola. Pero en cuanto a lo que viene despu&#xE9;s, es tal cual como construimos listas paso por paso al inicio de esta secci&#xF3;n. Finalmente, nuestra traducci&#xF3;n resultante quedar&#xED;a as&#xED;:</p>
+<pre><code>proc concatenar(l1, l2, l3)
+  case l1 of nil then l3 = l2
+  else case l1 of E|C then
+          declare t3
+          l3 = E|t3
+          concatenar(C, l2, t3)
+      end
+   end
+end
+</code></pre><p>Nota que tal como anticipamos, el hecho de que al traducir al lenguaje kernel estemos obligados a separar las instrucciones lo m&#xE1;s posible, hace que los pasos intermedios se vuelvan visibles de una forma mucho m&#xE1;s clara. Lo mismo sucede con la obligaci&#xF3;n de representar al retorno como una variable adicional. Al seguir esta norma debemos mostrar en forma clara cu&#xE1;l es la asignaci&#xF3;n que recibe. Bien, ya con esta versi&#xF3;n m&#xE1;s limpia de nuestra funci&#xF3;n para concatenar listas, podemos sin lugar a dudas afirmar que emplea la recursividad por cola. La llamada recursiva es la &#xFA;ltima acci&#xF3;n que realiza la funci&#xF3;n y la asignaci&#xF3;n del valor de retorno se realiza antes, como se puede observar. De hecho, adem&#xE1;s se puede notar como la t&#xE9;cnica clave para conseguir esto es la distinci&#xF3;n entre la declaraci&#xF3;n de una variable y la asignaci&#xF3;n de un valor a la misma (la cual se realiza con la llamada recursiva posterior). Es la posibilidad de contar con variables no enlazadas la que nos permite no tener que regresar a una llamada anterior. Adicionalmente, en ninguno de los casos se contradice la asignaci&#xF3;n &#xFA;nica que define a la programaci&#xF3;n funcional, pues de hecho, las asignaciones se realizan una sola vez para cada variable, en los distintos momentos que el primer argumento es una lista vac&#xED;a. Bien, dicho todo lo anterior, finalmente podemos dar por demostrada nuestra afirmaci&#xF3;n inicial: nuestra funci&#xF3;n era eficiente pues usa la recursividad por cola. En adici&#xF3;n, nos muestra c&#xF3;mo visualizar nuestros programas desde la mirada del lenguaje kernel nos ayuda a ver sus detalles, a notar con mayor claridad sus propiedades. M&#xE1;s all&#xE1; del formalismo complicado que puede parecer en un inicio, una definici&#xF3;n formal siempre puede ser de bastante utilidad.</p>
+<p><strong>Ejercicio</strong>: <br>
+ Todos tenemos que tratar con el procesamiento de textos en algun momento y la funci&#xF3;n &quot;Reemplazar todo&quot; es una aplicaci&#xF3;n com&#xFA;n en muchos de los casos. Con esta funci&#xF3;n puedes encontrar todas las ocurrencias de una cadena S1, y reemplazarlas con otra cadena S2.</p>
+<p> En este ejericio se te pide encontrar una cadena(bajo la forma de una lista) en otra lista. La funci&#xF3;n debe tomar dos listas L1 y L2 como argumentos, y retornar true si L1 se encuentra en L2. Por ejemplo, encontrarCadena([b, c], [a, b, c, d]) deber&#xED;a retornar true, pues [b, c] est&#xE1; en [a, b, c, d]. Nota adem&#xE1;s que si los dos argumentos son listas vac&#xED;as, tambi&#xE9;n debe retornar true.</p>
+<p> Adicionalmente, se te pide dise&#xF1;ar otra funci&#xF3;n de antemano. Una funci&#xF3;n que verifique si una lista L1 es un &#xAB;prefijo&#xBB; de otra lista L2. L1 es prefijo de L2 si L2 comienza con L1. Por ejemplo, si L1 = [a, b, c] y L2 = [a, b, c, d, e, f] entonces efectivamente L1 es prefijo de L2.</p>
+<p> Nota: la funci&#xF3;n prefijo se debe definir fuera de la funci&#xF3;n para encontrar una cadena en una lista.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../listas/listas.html" class="navigation navigation-prev " aria-label="Previous page: Definiendo las listas"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../listas/desafio-extra.html" class="navigation navigation-next " aria-label="Next page: Desafío extra: aplanar una lista"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"katex":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
