@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Entornos contextuales | Introduction</title>
+        <title>Conceptos claves | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -41,6 +41,8 @@
         
     
     
+    <link rel="next" href="../alto-orden/ejemplos.html" />
+    
     
     <link rel="prev" href="../alto-orden/index.html" />
     
@@ -52,10 +54,10 @@
         
     <div class="book"
         data-level="4.1"
-        data-chapter-title="Entornos contextuales"
+        data-chapter-title="Conceptos claves"
         data-filepath="alto-orden/entornos-contextuales.md"
         data-basepath=".."
-        data-revision="Mon Apr 04 2016 15:32:40 GMT-0300 (CLST)"
+        data-revision="Thu Apr 14 2016 14:04:13 GMT-0300 (CLST)"
         data-innerlanguage="">
     
 
@@ -277,7 +279,73 @@
                         
                             <b>4.1.</b>
                         
-                        Entornos contextuales
+                        Conceptos claves
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="alto-orden/ejemplos.html">
+            
+                
+                    <a href="../alto-orden/ejemplos.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Uniendo los conceptos
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="alto-orden/registros.html">
+            
+                
+                    <a href="../alto-orden/registros.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        Registros
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="arboles/index.html">
+            
+                
+                    <a href="../arboles/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Árboles y complejidad computacional
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="arboles/arboles.html">
+            
+                
+                    <a href="../arboles/arboles.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Árboles
                     </a>
             
             
@@ -321,7 +389,71 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="entornos-contextuales">Entornos contextuales</h1>
+                        <h1 id="programaci&#xF3;n-de-alto-orden-los-dos-conceptos-claves">Programaci&#xF3;n de alto orden: los dos conceptos claves</h1>
+<p>En la secci&#xF3;n anterior mencionamos que a&#xFA;n nos faltaba cierta parte para considerar completo nuestro lenguaje kernel, pero tambi&#xE9;n para considerar completa nuestra definici&#xF3;n del paradigma funcional. Si bien lo que hemos estado viendo hasta ahora es parte del paradigma funcional, ser&#xED;a m&#xE1;s correcto decir que sin los conceptos introducidos en esta secci&#xF3;n, ese paradigma correspond&#xED;a a una versi&#xF3;n m&#xE1;s simple conocida como programaci&#xF3;n funcional de primer orden. Ya con los conceptos, y especificamente, con los dos conceptos que presentaremos en esta secci&#xF3;n, entonces podremos dar por terminada nuestra definici&#xF3;n. Estos conceptos son la <strong>programaci&#xF3;n de alto orden</strong> y los <strong>registros</strong>. La programaci&#xF3;n de alto orden se refiere a la capacidad de usar las funciones como <em>entidades de primera clase</em> en el lenguaje. Esto quiere decir que podemos tratar a la funciones como si se trataran de un valor cualquiera, y con ello, ser capaces de pasar y retornar funciones a trav&#xE9;s de otras funciones. Podr&#xED;amos, por lo tanto, tener funciones que reciban a otras funciones y retornen una funci&#xF3;n con un comportamiento completamente nuevo basado en las funciones de entrada. Esta posibilidad, es de hecho, una <em>habilidad completamente poderosa</em> que subyace en las bases de la abstracci&#xF3;n de datos, incluyendo a la programaci&#xF3;n orientada a objetos. De modo que todas estas ideas sofisticadas que veremos en secciones posteriores, como las clases, los objetos, las metaclases, la herencia, y todo lo dem&#xE1;s, se pueden definir en t&#xE9;rminos de la programaci&#xF3;n de alto orden. El otro concepto, el de registro, se refiere a un tipo de dato compuesto (o estructura de datos) que permite la <em>indexaci&#xF3;n simb&#xF3;lica</em> como ya revisaremos en su momento. Esta estructura nos ser&#xE1; de gran utilidad tanto en la programaci&#xF3;n simb&#xF3;lica como en la abstracci&#xF3;n de datos para hacer legibles abstracciones m&#xE1;s complejas.</p>
+<p>Bien, aclarado el tema de esta secci&#xF3;n, comencemos explorando el primer concepto.</p>
+<h3 id="programaci&#xF3;n-de-alto-orden">Programaci&#xF3;n de alto orden</h3>
+<p>La programaci&#xF3;n de alto orden est&#xE1; basada en dos conceptos: el <em>entorno contextual</em> y el <em>procedimiento como valor</em>. A continuaci&#xF3;n, revisaremos cada concepto por separado, comenzando con el entorno contextual, y luego finalizaremos mostrando el poder que tienen los dos juntos.</p>
+<h4 id="entorno-contextual">Entorno contextual</h4>
+<p>Para entender este concepto, realicemos un peque&#xF1;o ejercicio. Revisemos cierto c&#xF3;digo escrito sobre alcance est&#xE1;tico. Mediante la revisi&#xF3;n de este ejercicio, podremos ver como surge de forma natural la necesidad de un <em>entorno contextual</em>. Bien, aqu&#xED; est&#xE1; el programa. Asume que nuestro c&#xF3;digo est&#xE1; aislado de modo que todas las variables presentes son locales a un determinado contexto <code>alcance local</code> &#xBF;Qu&#xE9; crees que deber&#xED;a desplegar?</p>
+<pre><code>alcance local:
+  declare P, Q
+
+  proc P
+    Imprime(100)
+  end
+
+  proc Q
+    P()
+  end
+
+  alcance local:
+    declare P
+
+    proc P()
+      Imprime(200)
+    end
+
+    Q()
+  end
+end
+</code></pre><p>Bien, c&#xF3;mo puedes ver, se han definido dos contextos locales, uno anidado dentro de otro. En el externo declaramos dos variables P y Q, y a cada una le asignamos un procedimiento. Posteriormente, declaramos una nueva variable P en el contexto interno y le asignamos otra funci&#xF3;n completamente distinta, para finalizar llamando a Q. En esta situaci&#xF3;n, &#xBF;Qu&#xE9; valor crees que se imprime? &#xBF;100 &#xF3; 200? &#xBF;La funci&#xF3;n Q llama a la definici&#xF3;n dada a P en el alcance exterior o en el interior? &#xBF;Qu&#xE9; piensas?. Para responder rigurosamente a esta pregunta, debemos encontrar cu&#xE1;l es el alcance de la variable P qu&#xE9; est&#xE1; al interior de la definici&#xF3;n de Q. As&#xED; que, bien, &#xBF;Cu&#xE1;l es su alcance?. Su alcance es aquella parte del programa donde todas las ocurrencias de P hacen referencia a la misma declaraci&#xF3;n y su variable. &#xBF;Y qu&#xE9; parte es esa? pues toda la secci&#xF3;n que corresponde al alcance exterior. Aquella que comienza con las declaraciones de P y Q, y que luego se pausa con la introducci&#xF3;n del alcance interno que declara un identificador P nuevamente, para luego reaparecer y terminar con la instrucci&#xF3;n end que le corresponde. Por lo tanto, la definici&#xF3;n que le corresponde al identificador P dentro de la definici&#xF3;n de Q, es aquella dada afuera, la que imprime 100. As&#xED; que bueno, 100 es entonces que imprimir&#xE1; el c&#xF3;digo anterior. Ahora, &#xBF;C&#xF3;mo le hace Q para saber cu&#xE1;l es la definici&#xF3;n que tiene P en el contexto que se defini&#xF3; Q, si la llamada al procedimiento Q se realiza en un contexto completamente diferente? &#xBF;C&#xF3;mo sabe Q que la definici&#xF3;n de P que le corresponde es la que imprim&#xED;a 100 y no la que imprim&#xED;a 200? Bueno, de algun modo debe recordarlo. En especifico, lo que sucede es que Q cuenta con una estructura de datos personal dentro de su definici&#xF3;n a la que llamamos el <em>entorno contextual</em>. Y es, en este entorno contextual, donde se almacena la correspondencia entre la P dentro de Q y su definici&#xF3;n. Siendo m&#xE1;s precisos, el <em>entorno contextual</em> de una funci&#xF3;n (o procedimiento) contiene  <em>todos</em> los identificadores que se usan <em>dentro</em> de la funci&#xF3;n pero que est&#xE1;n declarados afuera de ella. Bien, ahora que ya comprendimos c&#xF3;mo funciona la llamada a Q, veamos otro ejemplo:</p>
+<pre><code>declare A = 1
+
+proc Inc(X, Y):
+  Y = X + A
+end
+</code></pre><p>En este caso, tenemos un procedimiento Inc que suma una variable A que declaramos afuera del procedimiento a un argumento X, y luego almacena esta suma en una variable Y. Posteriormente, dado que Y es el &#xFA;ltimo argumento del procedimiento, se retorna este valor autom&#xE1;ticamente. Bien, ahora dado que la declaraci&#xF3;n de A se encuentra afuera del procedimiento y no directamente en su definici&#xF3;n, el identificador A ser&#xE1; parte  del <em>entorno contextual</em> del procedimiento Inc. Este hecho se puede denotar matem&#xE1;ticamente tal como se muestra a continuaci&#xF3;n:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mi>c</mi><mo>=</mo><mrow><mi>A</mi><mo>&#x2192;</mo><mi>a</mi></mrow><mo separator="true">,</mo><mtext><mtext>&#xA0;</mtext><mi mathvariant="normal">d</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi><mtext>&#xA0;</mtext></mtext><mi>a</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">
+Ec = {A \rightarrow a}, \text{ donde } a = 1
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mord mathit">c</span><span class="mrel">=</span><span class="mord displaystyle textstyle uncramped"><span class="mord mathit">A</span><span class="mrel">&#x2192;</span><span class="mord mathit">a</span></span><span class="mpunct">,</span><span class="text mord displaystyle textstyle uncramped"><span class="mord mspace">&#xA0;</span><span class="mord mathrm">d</span><span class="mord mathrm">o</span><span class="mord mathrm">n</span><span class="mord mathrm">d</span><span class="mord mathrm">e</span><span class="mord mspace">&#xA0;</span></span><span class="mord mathit">a</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span></span></p>
+<p>Aqu&#xED; se puede ver al entorno contextual como un conjunto que almacena una correspondencia entre A y una variable <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span> declarada afuera de la funci&#xF3;n, que en el caso del ejemplo, adem&#xE1;s est&#xE1; enlazada al valor 1.</p>
+<p><strong>Nota</strong>: A los identificadores incluidos en la definici&#xF3;n de una funci&#xF3;n (o procedimiento), que est&#xE1;n declarados afuera de la misma se les denomina <em>identificadores libres</em>.</p>
+<p><strong>Para tomar en cuenta</strong>:
+&#xBF;Qu&#xE9; piensas sobre el entorno contextual? &#xBF;Es f&#xE1;cil de comprender? &#xBF;Se te ocurren ejemplos complicados?</p>
+<h3 id="procedimiento-como-valor">Procedimiento como valor</h3>
+<p>Ahora que ya vimos qu&#xE9; era un entorno contextual, pasemos al siguiente concepto. En este caso, el nombre lo dice pr&#xE1;cticamente todo. <em>Procedimiento como valor</em> quiere decir que los procedimientos se consideran valores, y como cualquier otro valor, se pueden almacenar en memoria y vincular a variables. En general, a pesar que en muchos lenguajes la sintaxis para definir un procedimiento o una funci&#xF3;n, es de alg&#xFA;n modo similar a la que se muestra a continuaci&#xF3;n:</p>
+<pre><code>proc Inc(X, Y):
+  Y = X + A
+end
+</code></pre><p>Pero si en ese lenguaje los procedimientos est&#xE1;n definidos como valores, entonces la sintaxis anterior corresponde en realidad a un az&#xFA;car sint&#xE1;ctico. En estos casos, lo que en verdad sucede es que un valor de &#xAB;tipo procedimiento&#xBB; se asigna a una variable enlazada a un determinado identificador. Es decir, si tomamos en cuenta el ejemplo anterior, lo que realmente est&#xE1; sucediendo es la asignaci&#xF3;n de la definici&#xF3;n de un procedimiento a la variable enlazada al identificador Inc, tal como se muestra a continuaci&#xF3;n:</p>
+<pre><code>Inc = proc (X, Y) Y = X + A end
+</code></pre><p>Nota que en estos casos el procedimiento(o la funci&#xF3;n) ya no posee un &#xAB;nombre&#xBB;, sino que es un <em>procedimiento an&#xF3;nimo</em>. Podr&#xED;amos decir, por lo tanto, que es un procedimiento an&#xF3;nimo (una colecci&#xF3;n de instrucciones sin un identificador determinado) lo que se asigna a la variable del identificador Inc. Bien, en definitiva eso es un <em>procedimiento como valor</em>. Ahora ya sabes que si el lenguaje trata a los procedimientos como valores entonces esa forma de definirlos usada hasta ahora no es m&#xE1;s que un az&#xFA;car sint&#xE1;ctico para el acto de vincular un procedimiento an&#xF3;nimo a una variable. De hecho, en nuestra posterior actualizaci&#xF3;n al lenguaje kernel, los procedimientos ya no ser&#xE1;n <em>instrucciones</em> en s&#xED;, sino valores que se asignan a variables. Comprendido esto, ahora podemos revisar c&#xF3;mo lo anterior se almacena en la memoria. En realidad, no es nada complicado. Hasta este punto sabemos que una asignaci&#xF3;n de una variable a un identificador se conoce como un <em>entorno</em>, y que lo podemos representar matem&#xE1;ticamente as&#xED;:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>:</mo><mrow><mi>I</mi><mi>d</mi><mo>&#x2192;</mo><mi>v</mi><mi>a</mi><mi>r</mi></mrow></mrow><annotation encoding="application/x-tex">
+E: {Id \rightarrow var}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mrel">:</span><span class="mord displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mord mathit">d</span><span class="mrel">&#x2192;</span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span></span></span></span></span></span></p>
+<p>Como un procedimiento tambi&#xE9;n es un valor, entonces lo que ocurre es exactamente lo mismo. En este caso, tambi&#xE9;n se define un <em>entorno</em>, aunque este entorno puede ser algo especial, ya que adem&#xE1;s de incluir la correspondencia entre identificador-variable, adem&#xE1;s puede incluir <em>entornos contextuales</em>, es decir, correspondencias entre identificadores al interior del procedimiento/funci&#xF3;n y sus declaraciones dadas afuera. Por lo tanto, una variable inc vinculada a un identificador Inc, almacenar&#xED;a un valor como el siguiente:</p>
+<pre><code>inc = (proc(X, Y) Y = X + A end, {A -&gt; a})
+</code></pre><p>Y todo lo anterior se podr&#xED;a representar matem&#xE1;ticamente as&#xED;:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><mrow><mi>A</mi><mo>&#x2192;</mo><mi>a</mi><mo separator="true">,</mo><mi>I</mi><mi>n</mi><mi>c</mi><mo>&#x2192;</mo><mi>i</mi><mi>n</mi><mi>c</mi></mrow></mrow><annotation encoding="application/x-tex">
+E = {A \rightarrow a, Inc \rightarrow inc}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mrel">=</span><span class="mord displaystyle textstyle uncramped"><span class="mord mathit">A</span><span class="mrel">&#x2192;</span><span class="mord mathit">a</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.07847em;">I</span><span class="mord mathit">n</span><span class="mord mathit">c</span><span class="mrel">&#x2192;</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mord mathit">c</span></span></span></span></span></span></p>
+<p>Bien, con lo anterior podemos ver como los procedimientos son tratados como cualquier otro valor (como un n&#xFA;mero, por ejemplo). Y si bien son un tipo de valor m&#xE1;s complicado, son valores al fin y al cabo. Adicionalmente, podemos ver que cuando se trata de almacenar un procedimiento en la memoria, se almacena como un par compuesto de su definici&#xF3;n (su c&#xF3;digo) y su entorno contextual. Y es este par lo que finalmente se vincula a una variable.</p>
+<p><strong>Nota</strong>: En la memoria, el c&#xF3;digo que representa a la definici&#xF3;n de la funci&#xF3;n se puede almacenar de muchas formas. Aunque, por supuesto, se almacena en alguna especie de c&#xF3;digo compilado m&#xE1;s eficiente.</p>
+<p><strong>Nota2</strong>: Otro t&#xE9;rmino usado bastante para referirse al concepto de <em>procedimiento como valor</em> es el t&#xE9;rmino <em>closure</em>.</p>
+<p><strong>Para tomar en cuenta</strong> <br></p>
+<p>&#xBF;Qu&#xE9; comprend&#xED;as por procedimiento o funci&#xF3;n antes de leer el contenido anterior?
+&#xBF;Qu&#xE9; usos interesantes crees que pueden tener los <em>closures</em>?</p>
 
                     
                     </section>
@@ -332,8 +464,10 @@
         </div>
 
         
-        <a href="../alto-orden/index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Programación de alto orden y registros"><i class="fa fa-angle-left"></i></a>
+        <a href="../alto-orden/index.html" class="navigation navigation-prev " aria-label="Previous page: Programación de alto orden y registros"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../alto-orden/ejemplos.html" class="navigation navigation-next " aria-label="Next page: Uniendo los conceptos"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
